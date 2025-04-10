@@ -142,6 +142,7 @@ const Form = () => {
               </option>
             ))}
           </select>
+
           <input
             type="number"
             id="phone"

@@ -16,24 +16,23 @@ const Banner: React.FC<BannerProps> = ({
           src={src}
           alt={title ? title : "banner"}
           fill
-          className="object-cover"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black opacity-80"></div>
+        {/* <div className="absolute inset-0 bg-black opacity-80"></div> */}
         <div className="absolute inset-0 w-full h-full flex items-center justify-center">
           <Container>
             <div className="flex flex-col items-center justify-center gap-6 w-full">
               <div className="w-full">
-                <h1 className="md:text-xl text-lg font-semibold text-secondary text-center uppercase">
+                <h1 className="md:text-xl text-lg font-semibold text-white text-center uppercase">
                   {title}
                 </h1>
                 <h2 className="largeHeading font-bold text-white text-center">
                   {subTitle}
                 </h2>
               </div>
-              <div className="w-full max-w-7xl lg:block hidden">
-                <Form1 />
-              </div>
-              <p className="heading3 text-white text-center max-w-4xl tracking-wide w-full max-lg:hidden">{description}</p>
+              {/* <p className="heading3 text-white text-center max-w-4xl tracking-wide w-full max-lg:hidden">
+                {description}
+              </p> */}
             </div>
           </Container>
         </div>
