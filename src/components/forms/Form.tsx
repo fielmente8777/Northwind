@@ -1,11 +1,9 @@
 "use client";
-
-import axios from "axios";
-import React, { useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { countries } from "@/data/countryCode";
-import { DropDownIcon } from "@/data/icons";
 import useClickOutside from "@/hooks/useClickOutside";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import React, { useRef, useState } from "react";
 
 const Form = () => {
   const router = useRouter();
@@ -13,31 +11,33 @@ const Form = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const [countryCode, setCountryCode] = useState("+1"); // Default country code
+  const [countryCode, setCountryCode] = useState("+91"); // Default country code
   const [formRes, setFormRes] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   const [isOpen1, setIsOpen1] = useState(false);
 
+  const checkInRef = useRef<HTMLInputElement | null>(null);
+  const checkInOutRef = useRef<HTMLInputElement | null>(null);
+
   const dropDownRef3 = useRef<HTMLDivElement | null>(null);
-  const industries = useMemo(
-    () => [
-      "select Industry",
-      "Hotel Industry",
-      "Restaurant Industry",
-      "Immigration Industry",
-      "Beauty Industry",
-      "Clothing Industry",
-      "other Industry",
-    ],
-    []
-  );
+  // const industries = useMemo(
+  //   () => [
+  //     "select Industry",
+  //     "Hotel Industry",
+  //     "Restaurant Industry",
+  //     "Immigration Industry",
+  //     "Beauty Industry",
+  //     "Clothing Industry",
+  //     "other Industry",
+  //   ],
+  //   []
+  // );
 
   useClickOutside(dropDownRef3, () => isOpen1 && setIsOpen1(false));
 
-  const [selected, setSelected] = useState(industries[0]);
+  // const [selected, setSelected] = useState(industries[0]);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
@@ -120,7 +120,7 @@ const Form = () => {
     {
       tag: "div", // Use div to wrap select and input for phone number
       name: "phone",
-      placeholder: "Your Phone*",
+      placeholder: "Mobile number**",
       required: true,
       content: (
         <div className="flex gap-2 text-base">
@@ -156,52 +156,6 @@ const Form = () => {
       ),
     },
     {
-      tag: "div",
-      name: "industry",
-      placeholder: "Select Industry*",
-      required: true,
-      content: (
-        <div className="w-full relative" ref={dropDownRef3}>
-          <button
-            onClick={() => setIsOpen1(!isOpen1)}
-            type="button"
-            className="w-full h-full p-3  text-left flex items-center bg-clr2  justify-between gap-3"
-          >
-            <span className="capitalize text-light description1">
-              {selected}
-            </span>
-            <DropDownIcon
-              fill="#fff"
-              className={`${isOpen1 ? "rotate-180" : ""} fill-white transition-all duration-300 ease-in-out`}
-            />
-          </button>
-          <div
-            className={`absolute top-full left-0 right-0 overflow-y-scroll hide-scrollbar shadow-lg rounded-lg z-10 overflow-hidden transition-all duration-300 ease-in-out ${
-              isOpen1
-                ? "max-h-32 opacity-100 pointer-events-auto "
-                : "max-h-0 opacity-0 pointer-events-none"
-            }`}
-          >
-            {industries.map((industry, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => {
-                  setSelected(industry);
-                  setIsOpen1(false);
-                }}
-                className={`w-full px-4 bg-white text-nowrap py-2 border-b border-clr6 text-left uppercase text-sm font-medium hover:text-clr2 hover:border-clr2 transition-colors duration-300 ease-in-out ${
-                  selected === industry ? "text-clr2 border-clr2" : ""
-                }`}
-              >
-                {industry}
-              </button>
-            ))}
-          </div>
-        </div>
-      ),
-    },
-    {
       tag: "input",
       type: "email",
       name: "email",
@@ -211,10 +165,51 @@ const Form = () => {
       onChange: handleEmailChange,
     },
     {
+      tag: "div",
+      required: true,
+      content: (
+        <div className="w-full grid grid-cols-2" ref={dropDownRef3}>
+          <div className="relative flex items-center">
+            <input
+              type="date"
+              placeholder="Check in"
+              ref={checkInRef}
+              className="outline-none border-none w-full h-full px-2 bg-transparent pointer-events-auto opacity-0"
+            />
+            <span
+              className="absolute inset-0 flex items-center justify-start px-3 text-text-light cursor-pointer pointer-events-auto"
+              onClick={() => {
+                checkInRef?.current?.showPicker();
+              }}
+            >
+              Check in*
+            </span>
+          </div>
+
+          <div className="flex items-center relative">
+            <input
+              type="date"
+              ref={checkInOutRef}
+              className="outline-none border-none w-full h-full py-4 px-6 bg-transparent pointer-events-auto opacity-0"
+            />
+            <span
+              className="absolute inset-0 flex items-center justify-start text-text-light cursor-pointer pointer-events-auto px-3"
+              onClick={() => {
+                checkInOutRef?.current?.showPicker();
+              }}
+            >
+              Check out*
+            </span>
+          </div>
+        </div>
+      ),
+    },
+
+    {
       tag: "textarea",
       type: "text",
       name: "",
-      placeholder: "Tell us something about your enquiry!",
+      placeholder: "Enquiry now to get additional discounts!",
       required: true,
       value: userMessage,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -226,11 +221,11 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col h-full gap-4 bg-primary max-md:px-4 p-6 max-md:mt-6 text-base rounded-2xl w-full"
+      className="flex flex-col h-full gap-4 bg-secondary max-md:px-4 p-6 max-md:mt-6 text-base rounded-2xl w-full"
       id="contact"
     >
       <h3 className="text-xl lg:text-[2rem]/[2.5rem] font-normal text-white">
-        Get a Free Quote!
+        Contact Us Now!
       </h3>
 
       {formData.map((data, index) => (
@@ -263,9 +258,9 @@ const Form = () => {
       ))}
 
       <button
-        className={`raleway  bg-secondary text-white hover:bg-secondary/80 flex justify-center items-center gap-1 rounded-lg py-3 px- font-semibold `}
+        className={`raleway  bg-primary text-white hover:bg-secondary/80 flex justify-center items-center gap-1 rounded-lg py-3 px- font-semibold `}
       >
-        {formRes ? "Loading...." : "Submit"}
+        {formRes ? "Loading...." : "BOOK YOUR STAY"}
       </button>
     </form>
   );

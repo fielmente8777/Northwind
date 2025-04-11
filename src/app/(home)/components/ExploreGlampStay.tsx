@@ -1,6 +1,4 @@
-import { SectionWithContainer, SliderSwip, TwoColSection2 } from "@/components";
-import React from "react";
-import { SwiperSlide } from "swiper/react";
+import { SectionWithContainer, TwoColSection2 } from "@/components";
 
 const ExploreGlampData = [
   {
@@ -47,7 +45,7 @@ const ExploreGlampData = [
 const ExploreGlampStay = () => {
   return (
     <div className="bg-bg">
-      <SectionWithContainer>
+      <SectionWithContainer sectionClassName="!pb-0">
         <div className="max-w-[388px] mx-auto space-y-2">
           <h2 className="text-center barlow font-medium text-sm">
             EXPLORE OUR GLAMP STAYS
@@ -58,7 +56,7 @@ const ExploreGlampStay = () => {
 
       <div>
         {ExploreGlampData?.map((data, index: number) => (
-          <TwoColSection2 {...data} key={index} index={index} />
+          <TwoColSection2 {...data} index={index} key={index} />
         ))}
       </div>
     </div>

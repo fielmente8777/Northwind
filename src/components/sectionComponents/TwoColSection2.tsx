@@ -1,38 +1,39 @@
 "use client";
 import Image from "next/image";
-import SectionTitleSubTitle from "./SectionTitleSubTitle";
-import SectionWithContainer from "./SectionWithContainer";
+import { Autoplay, Navigation } from "swiper/modules";
 import { LinkButton } from "../buttons";
 import SliderSwip from "../SliderSwip";
-import { Autoplay, Navigation } from "swiper/modules";
+import SectionWithContainer from "./SectionWithContainer";
 
 export interface TwoColSectionProps {
   title: string;
   subTitle?: string;
-  desc?: string[];
+  desc?: string;
+  price?: string;
   images: {
-    src: "";
-    alt: "";
+    src: string;
+    alt: string;
   }[];
-  links?: {
-    name: string;
+  button?: {
+    label: string;
     href: string;
-  }[];
+  };
   btnCss?: boolean;
   index?: number;
+  key?: number;
 }
+
 const TwoColSection2: React.FC<TwoColSectionProps> = ({
   title,
-  subTitle,
   desc,
-  links,
+  price,
   images,
-  btnCss = false,
   index,
+  button,
 }) => {
   return (
-    <SectionWithContainer>
-      <div className="grid md:grid-cols-6 grid-cols-1 gap-4 md:gap-6">
+    <SectionWithContainer sectionClassName="md:!py-16">
+      <div className="grid lg:grid-cols-6 grid-cols-1 gap-4 md:gap-6 items-center">
         <div
           className={`w-full md:col-span-4 col-span-2 room-button  ${
             index
@@ -48,18 +49,6 @@ const TwoColSection2: React.FC<TwoColSectionProps> = ({
             spaceBetween={22}
             modules={[Autoplay, Navigation]}
             navigation={true}
-            breakpoints={
-              {
-                // 768: {
-                //   slidesPerView: 1,
-                //   spaceBetween: 24,
-                // },
-                // 640: {
-                //   slidesPerView: 2,
-                //   spaceBetween: 22,
-                // },
-              }
-            }
             classNameSwiper={`w-full border-t-[8px] ${index && index % 2 !== 0 ? "border-r-[8px]" : "border-l-[8px]"} border-primary`}
             classNameSwiperSlide="shadow-xl"
           >
@@ -81,35 +70,16 @@ const TwoColSection2: React.FC<TwoColSectionProps> = ({
         <div
           className={`flex flex-col gap-4 col-span-2 ${index !== undefined && index % 2 === 0 ? "md:order-2 order-1" : "md:order-1 order-2"}`}
         >
-          <h2>{title}</h2>
-          {/* <SectionTitleSubTitle
-            title={title}
-            subTitle={subTitle}
-            subTitleClassName="text-dark md:pe-4"
-          /> */}
-
-          <p className="heading4 text-dark">{desc}</p>
-
-          {/* {desc.map((item, index) => (
-            <p
-              key={index}
-              className="heading4 text-dark"
-              dangerouslySetInnerHTML={{ __html: item }}
-            ></p>
-          ))} */}
-
-          {/* <ul className="flex max-lg:flex-col items-center gap-2 mt-auto">
-            {links.map((link, index) => (
-              <li key={index} className="flex items-center gap-1">
-                <LinkButton
-                  href={link.href}
-                  className={`raleway ${index === 0 ? `${btnCss ? "bg-dark " : "bg-secondary"} text-white hover:box-shadow flex items-center gap-1 rounded-lg py-3 px-6` : "text-dark underline underline-offset-4 hover:text-primary"} font-semibold `}
-                >
-                  {link.name}
-                </LinkButton>
-              </li>
-            ))}
-          </ul> */}
+          <h2 className="md:text-3xl text-2xl">{title}</h2>
+          <p className="text-text-light text-lg leading-6">{desc}</p>
+          <p className="text-tertiary barlow text-2xl">{price}</p>
+          {button && (
+            <LinkButton href={button?.href}>
+              <button className="bg-primary px-4 py-2 hover:bg-secondary text-white rounded-md barlow text-sm duration-300 transition-all ease-in-out shadow-md">
+                {button.label}
+              </button>
+            </LinkButton>
+          )}
         </div>
       </div>
     </SectionWithContainer>

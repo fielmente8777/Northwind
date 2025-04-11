@@ -1,12 +1,10 @@
-import { FooterLinks, SocialLinks } from "@/data/links";
-import { SectionWithContainer } from "../sectionComponents";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { SectionWithContainer } from "../sectionComponents";
 
 const Logo = "/logo.png";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
   return (
     <footer className="max_screen bg-secondary text-white">
       <SectionWithContainer>

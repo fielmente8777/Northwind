@@ -1,27 +1,22 @@
 "use client";
+import { OutlinePhone } from "@/data/icons";
 import Image from "next/image";
-import { Container } from "../sectionComponents";
 import Link from "next/link";
-import { NaveLinks } from "@/data/links";
-import { DropDownIcon, OutlinePhone } from "@/data/icons";
-import { usePathname } from "next/navigation";
-import { AiOutlineMenu } from "react-icons/ai";
-import { useEffect, useState } from "react";
-import MobileNav from "./MobileNav";
+import { Container } from "../sectionComponents";
 
 const Navbar = () => {
-  const pathName = usePathname();
-  const [mobileMenu, setMobileMenu] = useState(false);
-  useEffect(() => {
-    if (mobileMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [mobileMenu]);
+  // const pathName = usePathname();
+  // const [mobileMenu, setMobileMenu] = useState(false);
+  // useEffect(() => {
+  //   if (mobileMenu) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, [mobileMenu]);
   return (
     <header className="max_screen bg-primary">
       <Container>
@@ -123,7 +118,7 @@ const Navbar = () => {
             {/* <span className="">
               <OutlinePhone className="fill-current stroke-currentColor md:w-7 aspect-square" />
             </span> */}
-            <span className="md:flex hidden md:px-4 md:py-2 md:hover:box-shadow flex items-center gap-1 md:border border-primary bg-white text-text-dark rounded-lg hover:bg-primary hover:text-white duration-300 transition-all ease-in-out">
+            <span className="md:flex hidden md:px-4 md:py-2 md:hover:box-shadow items-center gap-1 md:border border-primary bg-white text-text-dark rounded-lg hover:bg-secondary hover:text-white duration-300 transition-all ease-in-out">
               Book Now
             </span>
             <span className="md:hidden block">

@@ -11,6 +11,7 @@ export default {
       colors: {
         primary: "#D4B01C",
         secondary: "#1B1B1B",
+        tertiary: "#D98600",
         "form-light": "#969696",
         "text-dark": "#262626",
         "text-light": "#6D6D6D",

@@ -1,5 +1,4 @@
-import { Form, Form1 } from "@/components";
-import React from "react";
+import { Form1 } from "@/components";
 
 const CheckInOut = () => {
   return (

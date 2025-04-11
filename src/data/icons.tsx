@@ -1008,3 +1008,51 @@ export const TickIcon = ({ ...props }) => (
     />
   </svg>
 );
+
+export const RatingStar = () => {
+  return (
+    <svg
+      width="120"
+      height="24"
+      viewBox="0 0 120 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.9999 3L9.64994 8.76L3.43994 9.22L8.19994 13.24L6.70994 19.28L11.9999 16M11.9999 3L14.3499 8.76L20.5599 9.22L15.7999 13.24L17.2899 19.28L11.9999 16"
+        stroke="#D4B01C"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M35.9999 3L33.6499 8.76L27.4399 9.22L32.1999 13.24L30.7099 19.28L35.9999 16M35.9999 3L38.3499 8.76L44.5599 9.22L39.7999 13.24L41.2899 19.28L35.9999 16"
+        stroke="#D4B01C"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M59.9999 3L57.6499 8.76L51.4399 9.22L56.1999 13.24L54.7099 19.28L59.9999 16M59.9999 3L62.3499 8.76L68.5599 9.22L63.7999 13.24L65.2899 19.28L59.9999 16"
+        stroke="#D4B01C"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M83.9999 3L81.6499 8.76L75.4399 9.22L80.1999 13.24L78.7099 19.28L83.9999 16M83.9999 3L86.3499 8.76L92.5599 9.22L87.7999 13.24L89.2899 19.28L83.9999 16"
+        stroke="#D4B01C"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M108 3L105.65 8.76L99.4399 9.22L104.2 13.24L102.71 19.28L108 16M108 3L110.35 8.76L116.56 9.22L111.8 13.24L113.29 19.28L108 16"
+        stroke="#D4B01C"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

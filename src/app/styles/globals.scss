@@ -227,23 +227,24 @@ select {
 .room-button {
   .swiper-button-prev,
   .swiper-button-next {
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: rgba(255, 255, 255); /* Semi-transparent background */
-    color: #0d0120; /* Default icon color */
+    // width: 2.5rem;
+    // height: 2.5rem;
+    color: #D4B01C; /* Default icon color */
     border-radius: 50%; /* Make the buttons circular */
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover {
-      background-color: rgba(0, 0, 0); /* Darker on hover */
-      color: #eeeeee;
-    }
+    
+    // &:hover {
+    //   background-color: rgba(0, 0, 0); /* Darker on hover */
+    //   color: #eeeeee;
+    // }
 
     &::after {
       font-weight: 900;
-      font-size: 1rem;
+      font-size: 1.6rem;
     }
+
     @media screen and (max-width: 768px) {
       width: 1.5rem;
       height: 1.5rem;
@@ -253,11 +254,64 @@ select {
       }
     }
   }
-  // .swiper-button-next::after {
-  //   content: ">";
-  // }
 
-  // .swiper-button-prev::after {
-  //   content: "<";
-  // }
+} 
+
+.we-offer-slider .swiper-slide:not(.swiper-slide-active) {
+  h3 {
+    opacity: 0;
+  }
 }
+
+
+.testimonial-swiper{
+  .we-pagination{
+     .swiper-pagination-bullet{
+      width: 8px;
+      height: 8px ;
+      background-color: #686767;
+     } 
+     .swiper-pagination-bullet-active{
+      width: 32px;
+      height:8px ;
+      background-color: #363636;
+      border-radius: 8px;
+      transition: all 0.2s;
+     }
+  }
+    .swiper-button-prev,
+    .swiper-button-next {
+      // width: 2.5rem;
+      // height: 2.5rem;
+      color: #D4B01C; /* Default icon color */
+      border-radius: 50%; /* Make the buttons circular */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      // &:hover {
+      //   background-color: rgba(0, 0, 0); /* Darker on hover */
+      //   color: #eeeeee;
+      // }
+  
+      &::after {
+        font-weight: 900;
+        font-size: 1.4rem;
+      }
+  
+      @media screen and (max-width: 768px) {
+        width: 1.5rem;
+        height: 1.5rem;
+  
+        &::after {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  
+  
+}
+
+
+
+

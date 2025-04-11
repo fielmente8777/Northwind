@@ -1,15 +1,7 @@
 "use client";
-import { useMemo, useRef, useState } from "react";
-import { OnlyButton } from "../buttons";
+import { countries } from "@/data/countryCode";
 import useClickOutside from "@/hooks/useClickOutside";
-import {
-  CallIcon,
-  DropDownIcon,
-  HotelIcon,
-  MailIcon,
-  MessageIcon,
-  UserIcon,
-} from "@/data/icons";
+import { useRef, useState } from "react";
 
 const Form1 = () => {
   // const [extend, setExtend] = useState(false);
@@ -18,21 +10,22 @@ const Form1 = () => {
   const dropDownRef = useRef<HTMLDivElement | null>(null);
   const checkInRef = useRef<HTMLInputElement | null>(null);
   const checkInOutRef = useRef<HTMLInputElement | null>(null);
+  const [countryCode, setCountryCode] = useState("+91"); // Default country code
 
-  const industries = useMemo(
-    () => [
-      "select Industry",
-      "Hotel Industry",
-      "Restaurant Industry",
-      "Immigration Industry",
-      "Beauty Industry",
-      "Clothing Industry",
-      "other Industry",
-    ],
-    []
-  );
+  // const industries = useMemo(
+  //   () => [
+  //     "select Industry",
+  //     "Hotel Industry",
+  //     "Restaurant Industry",
+  //     "Immigration Industry",
+  //     "Beauty Industry",
+  //     "Clothing Industry",
+  //     "other Industry",
+  //   ],
+  //   []
+  // );
 
-  const [selected, setSelected] = useState(industries[0]);
+  // const [selected, setSelected] = useState(industries[0]);
 
   // useClickOutside(formRef, () => {
   //   if (extend) {
@@ -42,7 +35,7 @@ const Form1 = () => {
   useClickOutside(dropDownRef, () => {
     if (isOpen) {
       setIsOpen(false);
-      setSelected(industries[0]);
+      // setSelected(industries[0]);
     }
   });
 
@@ -59,17 +52,28 @@ const Form1 = () => {
         />
       </div>
 
-      <div className="col-span-2 grid grid-cols-12">
-        <div className="flex items-center col-span-2 pl-1">
-          <span className="text-sm">+91</span>
-          <span>
-            <DropDownIcon />
-          </span>
+      <div className="col-span-2 grid grid-cols-12 items-center">
+        <div className="col-span-4">
+          <select
+            id="countryCode"
+            name="countryCode"
+            value={countryCode}
+            onChange={(e) => setCountryCode(e.target.value)}
+            className={`rounded-lg text-[#333333] focus:outline-none w-full bg-transparent`}
+            style={{ width: `${countryCode.length * 1.7}ch` }}
+          >
+            {countries.map((country, index) => (
+              <option key={index} value={country.code} className=" bg-gray-100">
+                {`${country.code} ${country.name}`}
+              </option>
+            ))}
+          </select>
         </div>
+
         <input
           type="number"
           placeholder="Phone Number*"
-          className="col-span-10 outline-none border-none w-full h-full py-6 pl-6 px-2 text-sm bg-transparent"
+          className="col-span-8  outline-none border-none w-full h-full py-6 pe-2 text-sm bg-transparent"
         />
       </div>
 
@@ -101,7 +105,6 @@ const Form1 = () => {
       <div className="flex col-span-2 items-center relative">
         <input
           type="date"
-          placeholder="Check in"
           ref={checkInOutRef}
           className="outline-none border-none w-full h-full py-6 px-2 bg-transparent pointer-events-auto opacity-0"
         />
@@ -116,7 +119,7 @@ const Form1 = () => {
       </div>
 
       <div className="h-full col-span-2 flex items-center">
-        <button className="text-center bg-primary w-full h-full rounded-r-full font-bold text-white">
+        <button className="text-center bg-primary w-full h-full rounded-r-full font-bold text-white hover:bg-secondary duration-300 transition-all ease-in-out">
           Book Now
         </button>
       </div>
