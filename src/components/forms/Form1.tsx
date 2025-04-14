@@ -41,19 +41,19 @@ const Form1 = () => {
 
   return (
     <form
-      className={`rounded-full grid grid-cols-12 bg-bg divide-x-2 shadow-xl`}
+      className={`rounded-full grid grid-cols-12 bg-bg divide-x divide-form-light  shadow-xl`}
       ref={formRef}
     >
       <div className="col-span-2 h-full flex items-center">
         <input
           type="text"
           placeholder="Full Name*"
-          className="outline-none border-none w-full h-full p-6 bg-transparent"
+          className="outline-none border-none w-full h-full p-6 bg-transparent barlow text-lg barlow"
         />
       </div>
 
       <div className="col-span-2 grid grid-cols-12 items-center">
-        <div className="col-span-4">
+        <div className="col-span-3">
           <select
             id="countryCode"
             name="countryCode"
@@ -73,7 +73,7 @@ const Form1 = () => {
         <input
           type="number"
           placeholder="Phone Number*"
-          className="col-span-8  outline-none border-none w-full h-full py-6 pe-2 text-sm bg-transparent"
+          className="col-span-9 outline-none border-none w-full h-full py-6 pe-2 text-lg barlow bg-transparent"
         />
       </div>
 
@@ -81,7 +81,7 @@ const Form1 = () => {
         <input
           type="text"
           placeholder="Email Id*"
-          className="outline-none border-none w-full h-full py-6 px-2 bg-transparent"
+          className="outline-none border-none w-full h-full py-6 px-2 bg-transparent barlow text-lg"
         />
       </div>
 
@@ -90,10 +90,10 @@ const Form1 = () => {
           type="date"
           placeholder="Check in"
           ref={checkInRef}
-          className="outline-none border-none w-full h-full py-6 px-2 bg-transparent pointer-events-auto opacity-0"
+          className="outline-none border-none w-full h-full py-6 px-2 bg-transparent pointer-events-auto opacity-0 text-lg barlow"
         />
         <span
-          className="absolute inset-0 flex items-center justify-start px-2 text-text-light cursor-pointer pointer-events-auto"
+          className="absolute inset-0 flex items-center justify-start px-2 text- cursor-pointer pointer-events-auto barlow text-lg font-normal text-form-light"
           onClick={() => {
             checkInRef?.current?.showPicker();
           }}
@@ -109,7 +109,7 @@ const Form1 = () => {
           className="outline-none border-none w-full h-full py-6 px-2 bg-transparent pointer-events-auto opacity-0"
         />
         <span
-          className="absolute inset-0 flex items-center justify-start text-text-light cursor-pointer pointer-events-auto px-2"
+          className="absolute inset-0 flex items-center justify-start  cursor-pointer pointer-events-auto px-2 barlow font-normal text-form-light"
           onClick={() => {
             checkInOutRef?.current?.showPicker();
           }}
@@ -119,7 +119,7 @@ const Form1 = () => {
       </div>
 
       <div className="h-full col-span-2 flex items-center">
-        <button className="text-center bg-primary w-full h-full rounded-r-full font-bold text-white hover:bg-secondary duration-300 transition-all ease-in-out">
+        <button className="text-center bg-primary w-full h-full rounded-r-full text-white hover:bg-secondary duration-300 transition-all ease-in-out font-semibold barlow">
           Book Now
         </button>
       </div>

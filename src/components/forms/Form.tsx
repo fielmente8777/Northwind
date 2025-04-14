@@ -150,7 +150,7 @@ const Form = () => {
             placeholder="Mobile number*"
             value={userPhone}
             onChange={handlePhoneChange}
-            className="w-full bg-transparent border-l border-light px-2 py-3 placeholder:text-[#4C4C4C] text-black no-spinner focus:outline-none"
+            className="w-full bg-transparent border-l border-light px-2 py-3 placeholder:text-[#4C4C4C] text-black no-spinner focus:outline-none barlow"
           />
         </div>
       ),
@@ -177,7 +177,7 @@ const Form = () => {
               className="outline-none border-none w-full h-full px-2 bg-transparent pointer-events-auto opacity-0"
             />
             <span
-              className="absolute inset-0 flex items-center justify-start px-3 text-text-light cursor-pointer pointer-events-auto"
+              className="absolute inset-0 flex items-center justify-start px-3 text-text-light cursor-pointer pointer-events-auto barlow"
               onClick={() => {
                 checkInRef?.current?.showPicker();
               }}
@@ -193,7 +193,7 @@ const Form = () => {
               className="outline-none border-none w-full h-full py-4 px-6 bg-transparent pointer-events-auto opacity-0"
             />
             <span
-              className="absolute inset-0 flex items-center justify-start text-text-light cursor-pointer pointer-events-auto px-3"
+              className="absolute inset-0 flex items-center justify-start text-text-light cursor-pointer pointer-events-auto px-3 barlow"
               onClick={() => {
                 checkInOutRef?.current?.showPicker();
               }}
@@ -245,7 +245,7 @@ const Form = () => {
                   spellCheck: "false",
                   rows: "3",
                   className:
-                    "w-full bg-transparent no-spinner p-3 resize-none placeholder:text-[#4C4C4C] focus:outline-none valid:outline-blue-primary invalid:outline-Saffron-primary",
+                    "w-full bg-transparent no-spinner p-3 resize-none placeholder:text-[#4C4C4C] focus:outline-none valid:outline-blue-primary invalid:outline-Saffron-primary barlow",
                 })}
           </div>
           {data.name === "phone" && errorMessage && (

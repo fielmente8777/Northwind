@@ -24,7 +24,7 @@ const Banner: React.FC<BannerProps> = ({
           <Container>
             <div className="flex flex-col items-center justify-center gap-6 w-full">
               <div className="w-full space-y-4">
-                <h1 className="lg:text-3xl text-xl text-white text-center uppercase">
+                <h1 className="lg:text-3xl text-xl font-normal text-white text-center uppercase barlow">
                   {title}
                 </h1>
 

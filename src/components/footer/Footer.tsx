@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="max_screen bg-secondary text-white">
       <SectionWithContainer>
-        <div className="flex flex-col justify-center items-center gap-5">
+        <div className="flex flex-col justify-center items-center gap-5 barlow">
           <div className="relative max-w-64 w-full mx-auto aspect-[6/2]">
             <Image src={Logo} alt="Logo" fill className="object-contain" />
           </div>

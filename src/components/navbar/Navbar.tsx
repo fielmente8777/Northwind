@@ -118,7 +118,7 @@ const Navbar = () => {
             {/* <span className="">
               <OutlinePhone className="fill-current stroke-currentColor md:w-7 aspect-square" />
             </span> */}
-            <span className="md:flex hidden md:px-4 md:py-2 md:hover:box-shadow items-center gap-1 md:border border-primary bg-white text-text-dark rounded-lg hover:bg-secondary hover:text-white duration-300 transition-all ease-in-out">
+            <span className="md:flex hidden md:px-4 md:py-2 md:hover:box-shadow items-center gap-1 md:border border-primary bg-white text-text-dark rounded-lg hover:bg-secondary hover:text-white duration-300 transition-all ease-in-out barlow font-semibold text-lg">
               Book Now
             </span>
             <span className="md:hidden block">
