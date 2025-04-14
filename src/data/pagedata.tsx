@@ -16,11 +16,10 @@ import { imagesLink } from "./links";
 
 export const homePageData = {
   bannnerData: {
-    title: "boost your business with",
-    subTitle: "One Shot Marketing",
-    description:
-      "Unlock your brand’s potential with digital strategies that deliver results.",
-    src: imagesLink + "bnr1.webp",
+    title: "Your Glamping Adventure Awaits",
+    subTitle: "Escape to Northwind: Where Luxury Meets Great Outdoors",
+    // src: imagesLink + "bnr1.webp",
+    src: "/Northwind/home-banner-1.png",
     images: [""],
   },
   trustedTopBrands: {

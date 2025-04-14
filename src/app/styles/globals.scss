@@ -10,25 +10,41 @@
   scroll-behavior: smooth;
 }
 
+body{
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
 .raleway {
   font-family: "Raleway", sans-serif;
 }
 .montserrat {
   font-family: "Montserrat", sans-serif;
 }
-body {
-  font-family: "Montserrat", sans-serif;
+
+.barlow{
+  font-family: var(--font-barlow), sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  font-family: "Raleway", sans-serif;
-}
+
+
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-weight: normal;
+//   font-family: "Raleway", sans-serif;
+// }
 
 input,
 button,
@@ -69,7 +85,7 @@ select {
     max-width: 1280px;
     margin: 0 auto !important;
     width: 100%;
-    @media (width <= 768px) {
+    @media (width <= 1300px) {
       max-width: 100%;
       padding: 0 1rem;
     }
@@ -205,3 +221,97 @@ select {
     box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
   }
 }
+
+
+
+.room-button {
+  .swiper-button-prev,
+  .swiper-button-next {
+    // width: 2.5rem;
+    // height: 2.5rem;
+    color: #D4B01C; /* Default icon color */
+    border-radius: 50%; /* Make the buttons circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    // &:hover {
+    //   background-color: rgba(0, 0, 0); /* Darker on hover */
+    //   color: #eeeeee;
+    // }
+
+    &::after {
+      font-weight: 900;
+      font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &::after {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+} 
+
+.we-offer-slider .swiper-slide:not(.swiper-slide-active) {
+  h3 {
+    opacity: 0;
+  }
+}
+
+
+.testimonial-swiper{
+  .we-pagination{
+     .swiper-pagination-bullet{
+      width: 8px;
+      height: 8px ;
+      background-color: #686767;
+     } 
+     .swiper-pagination-bullet-active{
+      width: 32px;
+      height:8px ;
+      background-color: #363636;
+      border-radius: 8px;
+      transition: all 0.2s;
+     }
+  }
+    .swiper-button-prev,
+    .swiper-button-next {
+      // width: 2.5rem;
+      // height: 2.5rem;
+      color: #D4B01C; /* Default icon color */
+      border-radius: 50%; /* Make the buttons circular */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      // &:hover {
+      //   background-color: rgba(0, 0, 0); /* Darker on hover */
+      //   color: #eeeeee;
+      // }
+  
+      &::after {
+        font-weight: 900;
+        font-size: 1.4rem;
+      }
+  
+      @media screen and (max-width: 768px) {
+        width: 1.5rem;
+        height: 1.5rem;
+  
+        &::after {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  
+  
+}
+
+
+
+

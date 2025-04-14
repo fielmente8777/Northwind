@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Gilda_Display, Barlow } from "next/font/google";
 import "./styles/globals.scss";
 import "./styles/nav&button.scss";
 import { Footer, Navbar } from "@/components";
 
-const geistSans = Geist({
+const geistSans = Gilda_Display({
   variable: "--font-geist-sans",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const barlow = Barlow({
+  variable: "--font-barlow",
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -28,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${barlow.variable} antialiased`}
       >
         <Navbar />
         {children}

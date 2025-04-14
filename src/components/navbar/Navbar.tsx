@@ -1,50 +1,48 @@
 "use client";
+import { OutlinePhone } from "@/data/icons";
 import Image from "next/image";
-import { Container } from "../sectionComponents";
 import Link from "next/link";
-import { NaveLinks } from "@/data/links";
-import { DropDownIcon, OutlinePhone } from "@/data/icons";
-import { usePathname } from "next/navigation";
-import { AiOutlineMenu } from "react-icons/ai";
-import { useEffect, useState } from "react";
-import MobileNav from "./MobileNav";
+import { Container } from "../sectionComponents";
 
 const Navbar = () => {
-  const pathName = usePathname();
-  const [mobileMenu, setMobileMenu] = useState(false);
-  useEffect(() => {
-    if (mobileMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [mobileMenu]);
+  // const pathName = usePathname();
+  // const [mobileMenu, setMobileMenu] = useState(false);
+  // useEffect(() => {
+  //   if (mobileMenu) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, [mobileMenu]);
   return (
-    <header className="max_screen">
+    <header className="max_screen bg-primary">
       <Container>
-        <nav className="flex items-center justify-between py-3">
-          <div className="max-lg:block hidden">
+        <nav className="flex items-center justify-between">
+          {/* <div className="max-lg:block hidden">
             <button className="lg:hidden" onClick={() => setMobileMenu(true)}>
               <AiOutlineMenu size={25} color="#183f62" />
             </button>
             <MobileNav mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-          </div>
+          </div> */}
+
           <div className="">
             <Link
               href={"/"}
-              className="flex relative md:h-[3.5rem] h-[2.5rem]  md:aspect-[4/1.8] aspect-[3/1.5]"
+              className="flex relative md:h-[5rem] h-[2.5rem] md:aspect-[4/1.8] aspect-[3/1.5]"
             >
               <Image
                 src="/logo.png"
                 alt="one shot logo"
                 fill
+                className="object-contain"
               />
             </Link>
           </div>
-          <ul className="lg:flex hidden item-center gap-10">
+
+          {/* <ul className="lg:flex hidden item-center gap-10">
             {NaveLinks?.slice(1, NaveLinks.length).map((link, index) => {
               // const id = index + 1;
               return (
@@ -115,16 +113,17 @@ const Navbar = () => {
                 </li>
               );
             })}
-          </ul>
-          <Link
-            href={"tel:438-855-4446"}
-            target="_blank"
-            className="md:px-4 md:py-2 md:hover:box-shadow flex items-center gap-1 md:border border-primary bg-white text-primary rounded-lg hover:bg-primary hover:text-white duration-300 transition-all ease-in-out"
-          >
-            <span className="">
+          </ul> */}
+          <Link href={"tel:438-855-4446"} target="_blank" className="">
+            {/* <span className="">
               <OutlinePhone className="fill-current stroke-currentColor md:w-7 aspect-square" />
+            </span> */}
+            <span className="md:flex hidden md:px-4 md:py-2 md:hover:box-shadow items-center gap-1 md:border border-primary bg-white text-text-dark rounded-lg hover:bg-secondary hover:text-white duration-300 transition-all ease-in-out">
+              Book Now
             </span>
-            <span className="md:block hidden"> 438-855-4446</span>
+            <span className="md:hidden block">
+              <OutlinePhone />
+            </span>
           </Link>
         </nav>
       </Container>

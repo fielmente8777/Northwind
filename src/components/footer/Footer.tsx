@@ -1,15 +1,25 @@
-import { FooterLinks, SocialLinks } from "@/data/links";
-import { SectionWithContainer } from "../sectionComponents";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { SectionWithContainer } from "../sectionComponents";
+
+const Logo = "/logo.png";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
   return (
-    <footer className="max_screen bg-primary text-white">
+    <footer className="max_screen bg-secondary text-white">
       <SectionWithContainer>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 lg:gap-36 w-full">
-          <div className="w-full flex justify-center flex-col items-center gap-6">
+        <div className="flex flex-col justify-center items-center gap-5">
+          <div className="relative max-w-64 w-full mx-auto aspect-[6/2]">
+            <Image src={Logo} alt="Logo" fill className="object-contain" />
+          </div>
+          <p className="text-center">
+            Location: Mouza Bir Khasra No 464 ,Bir, near Zostel, Baijnath,
+            Himachal Pradesh 176077
+          </p>
+
+          <Link href={"/"}>Call: +91 8091172065</Link>
+          <Link href={"/"}>Email: northwind0057@gmail.com</Link>
+          {/* <div className="w-full flex justify-center flex-col items-center gap-6">
             <Link href="/">
               <Image src="/logo2.png" alt="logo" width={123.2} height={64} />
             </Link>
@@ -31,8 +41,9 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          {FooterLinks.map((link, index) => (
+          </div> */}
+
+          {/* {FooterLinks.map((link, index) => (
             <div key={index} className="flex flex-col gap-6">
               <h2 className="text-secondary text-lg capitalize">
                 {link.title}
@@ -50,16 +61,15 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-          ))}
+          ))} */}
         </div>
       </SectionWithContainer>
-      <SectionWithContainer sectionClassName="bg-dark !py-4">
-        <div className="flex max-lg:flex-col  max-lg:justify-center justify-between items-center">
-          <div className="flex max-lg:flex-col justify-center items-center gap-2">
-            <p className="text-center">
-              © {currentYear} One Shot Marketing, Canada
-            </p>
-            <p className="text-center">•  All rights reserved</p>
+
+      <SectionWithContainer sectionClassName="bg-primary !py-4">
+        <div className="flex md:flex-row flex-col justify-center gap-2 text-text-dark barlow">
+          <div className="flex justify-center gap-2">
+            <p className="text-center">© North Wind</p>
+            <p className="text-center">• All rights reserved</p>
             {/* <p className="text-center">
               • Design & Developed by{" "}
               <Link href="/https://eazotel.com" className="font-bold">
@@ -67,18 +77,16 @@ const Footer = () => {
               </Link>
             </p> */}
           </div>
-          <ul className="flex max-lg:mt-2 justify-center items-center gap-2">
+
+          <ul className="flex justify-center gap-2">
             <li className="">
               <Link
-                href="/privacy-policy"
+                href="https://eazotel.com"
+                target="_blank"
                 className="capitalize hover:text-secondary description1"
               >
-                Privacy policy
+                • Designed & Developed by Eazotel.com
               </Link>
-            </li>
-            <li className="">•</li>
-            <li className="">
-              <Link href="/terms-and-conditions" className="capitalize hover:text-secondary description1">terms & conditions</Link>
             </li>
           </ul>
         </div>

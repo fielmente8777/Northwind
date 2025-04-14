@@ -1,160 +1,128 @@
 "use client";
-import { useMemo, useRef, useState } from "react";
-import { OnlyButton } from "../buttons";
+import { countries } from "@/data/countryCode";
 import useClickOutside from "@/hooks/useClickOutside";
-import {
-  CallIcon,
-  DropDownIcon,
-  HotelIcon,
-  MailIcon,
-  MessageIcon,
-  UserIcon,
-} from "@/data/icons";
+import { useRef, useState } from "react";
 
 const Form1 = () => {
-  const [extend, setExtend] = useState(false);
+  // const [extend, setExtend] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
   const dropDownRef = useRef<HTMLDivElement | null>(null);
-  const industries = useMemo(
-    () => [
-      "select Industry",
-      "Hotel Industry",
-      "Restaurant Industry",
-      "Immigration Industry",
-      "Beauty Industry",
-      "Clothing Industry",
-      "other Industry",
-    ],
-    []
-  );
+  const checkInRef = useRef<HTMLInputElement | null>(null);
+  const checkInOutRef = useRef<HTMLInputElement | null>(null);
+  const [countryCode, setCountryCode] = useState("+91"); // Default country code
 
-  const [selected, setSelected] = useState(industries[0]);
+  // const industries = useMemo(
+  //   () => [
+  //     "select Industry",
+  //     "Hotel Industry",
+  //     "Restaurant Industry",
+  //     "Immigration Industry",
+  //     "Beauty Industry",
+  //     "Clothing Industry",
+  //     "other Industry",
+  //   ],
+  //   []
+  // );
 
-  useClickOutside(formRef, () => {
-    if (extend) {
-      setExtend(false);
-    }
-  });
+  // const [selected, setSelected] = useState(industries[0]);
+
+  // useClickOutside(formRef, () => {
+  //   if (extend) {
+  //     setExtend(false);
+  //   }
+  // });
   useClickOutside(dropDownRef, () => {
     if (isOpen) {
       setIsOpen(false);
-      setSelected(industries[0]);
+      // setSelected(industries[0]);
     }
   });
+
   return (
     <form
-      className={`w-full md:grid flex flex-col max-lg:gap-2 ${extend ? "grid-cols-6 md:gap-y-4 max-lg:mb-8" : "grid-cols-7"} text-white transition-all duration-500 ease-in-out transform ${
-        extend ? "scale-y-105" : "scale-100"
-      } bg-dark p-2 rounded-lg shadow-xl`}
-      onClick={() => setExtend(true)}
+      className={`rounded-full grid grid-cols-12 bg-bg divide-x-2 shadow-xl`}
       ref={formRef}
     >
-      <div className="col-span-2 md:border-r border-light flex items-center justify-center gap-2 w-full py-3 px-4">
-        <label htmlFor="name">
-          <UserIcon />
-        </label>
+      <div className="col-span-2 h-full flex items-center">
         <input
           type="text"
-          name="name"
-          id="name"
-          placeholder="Name"
-          className="w-full bg-transparent text-white placeholder:text-white rounded-lg  focus:outline-none outline-none"
+          placeholder="Full Name*"
+          className="outline-none border-none w-full h-full p-6 bg-transparent"
         />
-      </div>
-      <div className="col-span-2 md:border-r border-light flex items-center justify-center gap-2 w-full py-3 px-4">
-        <label htmlFor="phone">
-          <CallIcon />
-        </label>
-        <input
-          type="tel"
-          name="phone"
-          id="phone"
-          placeholder="Phone"
-          className="w-full bg-transparent text-white placeholder:text-white rounded-lg focus:outline-none outline-none"
-        />
-      </div>
-      <div className="col-span-2 w-full flex items-center justify-center gap-2 py-3 px-4">
-        <label htmlFor="email">
-          <MailIcon />
-        </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email"
-          className="w-full bg-transparent text-white placeholder:text-white rounded-lg focus:outline-none outline-none"
-        />
-      </div>
-      <div
-        className={`col-span-2 md:border-r border-light ${extend ? "block" : "hidden"}`}
-      >
-        <div className="w-full relative" ref={dropDownRef}>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            type="button"
-            className="w-full h-full p-3  text-left flex items-center bg-clr2  justify-between gap-3"
-          >
-            <span className="flex items-center justify-center gap-2">
-              <HotelIcon
-                fill="#fff"
-                className="fill-white w-10 aspect-square"
-              />
-              <span className="uppercase text-white text-xs font-medium">
-                {selected}
-              </span>
-            </span>
-            <DropDownIcon
-              fill="#fff"
-              className={`${isOpen ? "rotate-180" : ""} fill-white transition-all duration-300 ease-in-out`}
-            />
-          </button>
-          <div
-            className={`absolute top-full pt-4 left-0 right-0 shadow-lg rounded-lg z-10 overflow-hidden transition-all duration-300 ease-in-out ${
-              isOpen
-                ? "max-h-60 opacity-100 pointer-events-auto"
-                : "max-h-0 opacity-0 pointer-events-none"
-            }`}
-          >
-            {industries.map((industry, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => {
-                  setSelected(industry);
-                  setIsOpen(false);
-                }}
-                className={`w-full px-4 bg-dark text-nowrap py-2 border-b border-clr6 text-left uppercase text-sm font-medium hover:text-clr2 hover:border-clr2 transition-colors duration-300 ease-in-out ${
-                  selected === industry ? "text-clr2 border-clr2" : ""
-                }`}
-              >
-                {industry}
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
 
-      <div
-        className={`col-span-2  ${extend ? "w-full flex items-center justify-center gap-2 py-3 px-4" : "hidden"}`}
-      >
-        <label htmlFor="message">
-          <MessageIcon fill="#fff" className="fill-white w-10 aspect-square" />
-        </label>
-        <textarea
-          name="message"
-          id="message"
-          placeholder="Message"
-          rows={1}
-          className="w-full bg-transparent text-white placeholder:text-white focus:outline-none outline-none resize-none"
-        ></textarea>
+      <div className="col-span-2 grid grid-cols-12 items-center">
+        <div className="col-span-4">
+          <select
+            id="countryCode"
+            name="countryCode"
+            value={countryCode}
+            onChange={(e) => setCountryCode(e.target.value)}
+            className={`rounded-lg text-[#333333] focus:outline-none w-full bg-transparent`}
+            style={{ width: `${countryCode.length * 1.7}ch` }}
+          >
+            {countries.map((country, index) => (
+              <option key={index} value={country.code} className=" bg-gray-100">
+                {`${country.code} ${country.name}`}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <input
+          type="number"
+          placeholder="Phone Number*"
+          className="col-span-8  outline-none border-none w-full h-full py-6 pe-2 text-sm bg-transparent"
+        />
       </div>
-      <OnlyButton
-        Props={{ type: "submit" }}
-        className={`${extend ? "col-span-2 ms-1" : "col-span-1"} bg-secondary hover:bg-white hover:text-primary flex items-center justify-center py-3 rounded-lg font-semibold hover:shadow-2xl hover:scale-[1.01]`}
-      >
-        Get a FREE quote!
-      </OnlyButton>
+
+      <div className="col-span-2 h-full flex items-center">
+        <input
+          type="text"
+          placeholder="Email Id*"
+          className="outline-none border-none w-full h-full py-6 px-2 bg-transparent"
+        />
+      </div>
+
+      <div className="col-span-2 relative flex items-center">
+        <input
+          type="date"
+          placeholder="Check in"
+          ref={checkInRef}
+          className="outline-none border-none w-full h-full py-6 px-2 bg-transparent pointer-events-auto opacity-0"
+        />
+        <span
+          className="absolute inset-0 flex items-center justify-start px-2 text-text-light cursor-pointer pointer-events-auto"
+          onClick={() => {
+            checkInRef?.current?.showPicker();
+          }}
+        >
+          Check in
+        </span>
+      </div>
+
+      <div className="flex col-span-2 items-center relative">
+        <input
+          type="date"
+          ref={checkInOutRef}
+          className="outline-none border-none w-full h-full py-6 px-2 bg-transparent pointer-events-auto opacity-0"
+        />
+        <span
+          className="absolute inset-0 flex items-center justify-start text-text-light cursor-pointer pointer-events-auto px-2"
+          onClick={() => {
+            checkInOutRef?.current?.showPicker();
+          }}
+        >
+          Check out
+        </span>
+      </div>
+
+      <div className="h-full col-span-2 flex items-center">
+        <button className="text-center bg-primary w-full h-full rounded-r-full font-bold text-white hover:bg-secondary duration-300 transition-all ease-in-out">
+          Book Now
+        </button>
+      </div>
     </form>
   );
 };
