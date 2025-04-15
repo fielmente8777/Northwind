@@ -83,9 +83,9 @@ const Footer = () => {
               <Link
                 href="https://eazotel.com"
                 target="_blank"
-                className="capitalize hover:text-secondary description1"
+                className=" hover:text-secondary description1"
               >
-                • Designed & Developed by Eazotel.com
+                • Designed & developed by eazotel.com
               </Link>
             </li>
           </ul>
