@@ -49,8 +49,8 @@ const TwoColSection2: React.FC<TwoColSectionProps> = ({
             spaceBetween={22}
             modules={[Autoplay, Navigation]}
             navigation={true}
-            classNameSwiper={`w-full border-t-[8px] ${index && index % 2 !== 0 ? "border-r-[8px]" : "border-l-[8px]"} border-primary`}
-            classNameSwiperSlide="shadow-xl"
+            classNameSwiper={`w-full ${index && index % 2 !== 0 ? "border-shadow-right" : "border-shadow-left"}`}
+            // classNameSwiperSlide="shadow-xl"
           >
             {(card) => (
               <div

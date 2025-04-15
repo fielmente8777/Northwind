@@ -25,6 +25,7 @@ input[type=number]::-webkit-outer-spin-button {
 .raleway {
   font-family: "Raleway", sans-serif;
 }
+
 .montserrat {
   font-family: "Montserrat", sans-serif;
 }
@@ -33,6 +34,18 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: var(--font-barlow), sans-serif;
 }
 
+
+.border-shadow-left{
+  -webkit-box-shadow: -9px -9px 0px 0px #D4B01C;
+-moz-box-shadow: -9px -9px 0px 0px #D4B01C;
+box-shadow: -9px -9px 0px 0px #D4B01C;
+}
+
+.border-shadow-right{
+ -webkit-box-shadow: 9px -9px 0px 0px #D4B01C;
+ -moz-box-shadow: 9px -9px 0px 0px #D4B01C;
+  box-shadow: 9px -9px 0px 0px #D4B01C;
+}  
 
 
 

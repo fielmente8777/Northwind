@@ -76,7 +76,9 @@ const Testimonial = () => {
                   <div className="flex justify-center items-center">
                     <RatingStar />
                   </div>
-                  <p className="text-center barlow">{card?.review}</p>
+                  <p className="text-center barlow text-text-light">
+                    {card?.review}
+                  </p>
                 </div>
               </div>
             )}
