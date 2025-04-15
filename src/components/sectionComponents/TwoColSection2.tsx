@@ -71,7 +71,7 @@ const TwoColSection2: React.FC<TwoColSectionProps> = ({
           className={`flex flex-col gap-4 col-span-2 ${index !== undefined && index % 2 === 0 ? "md:order-2 order-1" : "md:order-1 order-2"}`}
         >
           <h2 className="md:text-3xl text-2xl">{title}</h2>
-          <p className="text-text-light text-lg leading-6">{desc}</p>
+          <p className="text-text-light text-lg leading-6 barlow">{desc}</p>
           <p className="text-tertiary barlow text-2xl">{price}</p>
           {button && (
             <LinkButton href={button?.href}>

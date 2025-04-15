@@ -119,7 +119,7 @@ const Form1 = () => {
       </div>
 
       <div className="h-full col-span-2 flex items-center">
-        <button className="text-center bg-primary w-full h-full rounded-r-full text-white hover:bg-secondary duration-300 transition-all ease-in-out font-semibold barlow">
+        <button className="text-center bg-primary w-full h-full rounded-r-full text-white hover:bg-secondary duration-300 transition-all ease-in-out font-semibold barlow uppercase">
           Book Now
         </button>
       </div>

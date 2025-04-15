@@ -27,7 +27,7 @@ export default function Home() {
           <h3 className="text-center md:text-5xl text-2xl text-text-dark">
             At Northwind
           </h3>
-          <p className="text-text-light text-center">
+          <p className="text-text-light text-center barlow">
             We offer a unique blend of luxury and adventure in the heart of Bir,
             Himachal Pradesh. Our glamping campsite provides a perfect escape
             from the hustle and bustle of daily life, allowing you to immerse
