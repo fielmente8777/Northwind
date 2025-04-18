@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Gilda_Display, Barlow } from "next/font/google";
 import "./styles/globals.scss";
 import "./styles/nav&button.scss";
-import { Footer, Navbar } from "@/components";
+import { Call, Footer, Navbar } from "@/components";
+import Whatsapp from '../components/ContactButton/WhatsApp';
 
 const geistSans = Gilda_Display({
   variable: "--font-geist-sans",
@@ -34,6 +35,8 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Call callNumber="918091172065" />
+        <Whatsapp whatsAppNumber="8091172065"/>
         <Footer />
       </body>
     </html>
