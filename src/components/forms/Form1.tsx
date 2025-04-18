@@ -63,6 +63,7 @@ const Form1 = () => {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     // if (userPhone.length !== 10) {
     //   setErrorMessage("Phone number must be exactly 10 digits.");
     //   return;
@@ -74,7 +75,6 @@ const Form1 = () => {
     if (formData?.EmailId === "") return;
     try {
       setFormRes(true);
-
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
