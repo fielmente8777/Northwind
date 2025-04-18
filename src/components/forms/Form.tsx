@@ -2,11 +2,10 @@
 import { countries } from "@/data/countryCode";
 import useClickOutside from "@/hooks/useClickOutside";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 
 const Form = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
@@ -17,6 +16,8 @@ const Form = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const [isOpen1, setIsOpen1] = useState(false);
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
 
   const checkInRef = useRef<HTMLInputElement | null>(null);
   const checkInOutRef = useRef<HTMLInputElement | null>(null);
@@ -73,7 +74,7 @@ const Form = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "sumit",
+          Domain: "sumittest",
           // Domain: "", // Replace with your actual domain value
           email: userEmail,
           Name: userName,
@@ -95,7 +96,7 @@ const Form = () => {
         setUserPhone("");
         // setCountryCode("+91"); // Reset country code
         setFormRes(false);
-        router.push("/thank-you/");
+        // router.push("/thank-you/");
       } else {
         setFormRes(false);
         alert("Something went wrong!");
@@ -174,15 +175,16 @@ const Form = () => {
               type="date"
               placeholder="Check in"
               ref={checkInRef}
+              onChange={(e) => setCheckInDate(e.target.value)}
               className="outline-none border-none w-full h-full px-2 bg-transparent pointer-events-auto opacity-0"
             />
             <span
-              className="absolute inset-0 flex items-center justify-start px-3 text-text-light cursor-pointer pointer-events-auto barlow"
+              className="absolute inset-0 flex items-center justify-start px-3 text-text-light cursor-pointer pointer-events-auto barlow opacity-1"
               onClick={() => {
                 checkInRef?.current?.showPicker();
               }}
             >
-              Check in*
+              {checkInDate ? checkInDate : " Check in"}
             </span>
           </div>
 
@@ -190,6 +192,7 @@ const Form = () => {
             <input
               type="date"
               ref={checkInOutRef}
+              onChange={(e) => setCheckOutDate(e.target.value)}
               className="outline-none border-none w-full h-full py-4 px-6 bg-transparent pointer-events-auto opacity-0"
             />
             <span
@@ -198,7 +201,7 @@ const Form = () => {
                 checkInOutRef?.current?.showPicker();
               }}
             >
-              Check out*
+              {checkOutDate ? checkOutDate : "Check out*"}
             </span>
           </div>
         </div>

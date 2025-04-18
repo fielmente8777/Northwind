@@ -3,8 +3,12 @@ import { OutlinePhone } from "@/data/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../sectionComponents";
+import { OnlyButton } from "../buttons";
+import { useState } from "react";
+import PopUP from "../PopUp/PopUp";
 
 const Navbar = () => {
+  const [openPopUp, setOpenPopUp] = useState(false);
   // const pathName = usePathname();
   // const [mobileMenu, setMobileMenu] = useState(false);
   // useEffect(() => {
@@ -114,7 +118,11 @@ const Navbar = () => {
               );
             })}
           </ul> */}
-          <Link href={"tel:438-855-4446"} target="_blank" className="">
+          <OnlyButton
+            onclick={() => {
+              setOpenPopUp(true);
+            }}
+          >
             {/* <span className="">
               <OutlinePhone className="fill-current stroke-currentColor md:w-7 aspect-square" />
             </span> */}
@@ -124,8 +132,9 @@ const Navbar = () => {
             <span className="md:hidden block">
               <OutlinePhone />
             </span>
-          </Link>
+          </OnlyButton>
         </nav>
+        <PopUP openNewsLetter={openPopUp} setOpenNewsLetter={setOpenPopUp} />
       </Container>
     </header>
   );

@@ -15,7 +15,7 @@ const ExploreGlampData = [
         alt: "Northwind-image",
       },
       {
-        src: "/Northwind/glamp-1.png",
+        src: "/Northwind/pg.jpg",
         alt: "Northwind-image",
       },
     ],
@@ -24,18 +24,18 @@ const ExploreGlampData = [
   {
     title: "Superior Glamps",
     desc: "Surrounded by nature, our Superior Glamp sites offer stunning mountain views and luxury amenities like high speed connectivity, entertainment screen and  state of the art sanitation services. Enjoy contemporary design and outdoor sitting areas for a truly comfortable stay",
-    price: "Price starting @ ₹7999/-",
+    price: "Price starting @ ₹6999/-",
     button: {
       label: "BOOK NOW",
       href: "/",
     },
     images: [
       {
-        src: "/Northwind/glamp-2.png",
+        src: "/Northwind/sg.jpg",
         alt: "Northwind-image",
       },
       {
-        src: "/Northwind/glamp-2.png",
+        src: "/Northwind/sg2.jpg",
         alt: "Northwind-image",
       },
     ],

@@ -1,18 +1,24 @@
+"use client";
+
 import {
   Banner,
   Form,
-  LinkButton,
+  OnlyButton,
   Section,
   SectionWithContainer,
 } from "@/components";
+import PopUP from "@/components/PopUp/PopUp";
 import { homePageData } from "@/data/pagedata";
+import Image from "next/image";
+import { useState } from "react";
 import CheckInOut from "./components/Check-in-out";
 import ExploreGlampStay from "./components/ExploreGlampStay";
-import ThingsToDo from "./components/ThingsToDo";
-import Image from "next/image";
 import Testimonial from "./components/Testimonial";
+import ThingsToDo from "./components/ThingsToDo";
 
 export default function Home() {
+  const [openPopUp, setOpenPopUp] = useState(false);
+
   return (
     <main>
       {/* home banner section  */}
@@ -24,9 +30,11 @@ export default function Home() {
           <h2 className="text-center font-medium barlow text-sm text-text-dark">
             WELCOME TO ROMANCY
           </h2>
+
           <h3 className="text-center md:text-5xl text-2xl text-text-dark">
             At Northwind
           </h3>
+
           <p className="text-text-light text-center barlow">
             We offer a unique blend of luxury and adventure in the heart of Bir,
             Himachal Pradesh. Our glamping campsite provides a perfect escape
@@ -38,11 +46,16 @@ export default function Home() {
             Northwind guarantees an unforgettable experience
           </p>
 
-          <LinkButton href="/" className="flex justify-center">
-            <button className="bg-primary hover:bg-secondary duration-300 transition-all ease-in-out px-4 py-2 text-sm text-white barlow rounded-md">
+          <OnlyButton
+            className="flex justify-center mx-auto"
+            onclick={() => setOpenPopUp(true)}
+          >
+            <button className="bg-primary hover:bg-secondary duration-300 transition-all ease-in-out px-4 py-2 text-sm text-white barlow rounded-md ">
               BOOK YOUR STAY
             </button>
-          </LinkButton>
+          </OnlyButton>
+
+          <PopUP openNewsLetter={openPopUp} setOpenNewsLetter={setOpenPopUp} />
         </div>
       </SectionWithContainer>
 
