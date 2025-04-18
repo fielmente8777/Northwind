@@ -12,56 +12,14 @@ const Footer = () => {
           <div className="relative max-w-64 w-full mx-auto aspect-[6/2]">
             <Image src={Logo} alt="Logo" fill className="object-contain" />
           </div>
-          <p className="text-center">
+          <Link href={"https://maps.app.goo.gl/FmK81SGe8qTeEXa4A"} target="_blank" className="text-center hover:text-primary" >
             Location: Mouza Bir Khasra No 464 ,Bir, near Zostel, Baijnath,
             Himachal Pradesh 176077
-          </p>
+          </Link>
 
-          <Link href={"/"}>Call: +91 8091172065</Link>
-          <Link href={"/"}>Email: northwind0057@gmail.com</Link>
-          {/* <div className="w-full flex justify-center flex-col items-center gap-6">
-            <Link href="/">
-              <Image src="/logo2.png" alt="logo" width={123.2} height={64} />
-            </Link>
-            <p className="heading4 text-center">
-              One Shot Marketing delivers results-driven digital marketing
-              solutions to elevate your brand.{" "}
-            </p>
-            <ul className="w-full flex justify-center items-center gap-4">
-              {SocialLinks.map((link, index) => (
-                <li key={index} className="">
-                  <Link
-                    href={link.href}
-                    target="_blank"
-                    className="hover:text-white hover:box-shadow active:scale-95 duration-300 transition-all ease-in-out text-primary bg-white w-10 rounded aspect-square hover:bg-secondary flex justify-center items-center"
-                  >
-                    <span className="sr-only">{link.name}</span>
-                    {link.icon}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
-          {/* {FooterLinks.map((link, index) => (
-            <div key={index} className="flex flex-col gap-6">
-              <h2 className="text-secondary text-lg capitalize">
-                {link.title}
-              </h2>
-              <ul className="flex flex-col gap-4">
-                {link.links?.map((sublink, index) => (
-                  <li key={index}>
-                    <Link
-                      href={sublink.href}
-                      className={`hover:text-secondary ${link.title.toLowerCase() === "contact" ? "" : "capitalize"}`}
-                    >
-                      {sublink.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))} */}
+          <Link href={"tel:+918091172065"} target="_blank" className="hover:text-primary">Call: +918091172065</Link>
+          <Link href={"mailto:northwind0057@gmail.com"} target="_blank" className="hover:text-primary">Email: northwind0057@gmail.com</Link>
+         
         </div>
       </SectionWithContainer>
 
@@ -70,12 +28,7 @@ const Footer = () => {
           <div className="flex justify-center gap-2">
             <p className="text-center">© North Wind</p>
             <p className="text-center">• All rights reserved</p>
-            {/* <p className="text-center">
-              • Design & Developed by{" "}
-              <Link href="/https://eazotel.com" className="font-bold">
-                Eazotel
-              </Link>
-            </p> */}
+           
           </div>
 
           <ul className="flex justify-center gap-2">
@@ -85,7 +38,7 @@ const Footer = () => {
                 target="_blank"
                 className=" hover:text-secondary description1"
               >
-                • Designed & developed by eazotel.com
+                • Designed & developed by eazotel
               </Link>
             </li>
           </ul>
