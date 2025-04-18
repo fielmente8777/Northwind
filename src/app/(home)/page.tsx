@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Banner,
-  Form,
-  OnlyButton,
-  Section,
-  SectionWithContainer,
-} from "@/components";
+import { Banner, Form, Section, SectionWithContainer } from "@/components";
 import PopUP from "@/components/PopUp/PopUp";
 import { homePageData } from "@/data/pagedata";
 import Image from "next/image";
@@ -46,14 +40,14 @@ export default function Home() {
             Northwind guarantees an unforgettable experience
           </p>
 
-          <OnlyButton
-            className="flex justify-center mx-auto"
-            onclick={() => setOpenPopUp(true)}
-          >
-            <button className="bg-primary hover:bg-secondary duration-300 transition-all ease-in-out px-4 py-2 text-sm text-white barlow rounded-md ">
+          <div className="flex justify-center">
+            <button
+              onClick={() => setOpenPopUp(true)}
+              className="bg-primary hover:bg-secondary mx-auto duration-300 transition-all ease-in-out px-4 py-2 text-sm text-white barlow rounded-md "
+            >
               BOOK YOUR STAY
             </button>
-          </OnlyButton>
+          </div>
 
           <PopUP openNewsLetter={openPopUp} setOpenNewsLetter={setOpenPopUp} />
         </div>

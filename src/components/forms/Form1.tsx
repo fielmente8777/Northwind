@@ -72,7 +72,10 @@ const Form1 = () => {
     //   setEmailErrorMessage("Please enter a valid email address.");
     //   return;
     // }
+
     if (formData?.EmailId === "") return;
+
+    console.log(formData);
     try {
       setFormRes(true);
       const { data } = await axios.post(
@@ -91,7 +94,7 @@ const Form1 = () => {
         }
       );
       if (data.Status) {
-        // setFormRes(true);
+        setFormRes(false);
         // setUserName("");
         // setUserEmail("");
         // setUserMessage("");
@@ -118,6 +121,7 @@ const Form1 = () => {
       <div className="col-span-2 h-full flex items-center">
         <input
           type="text"
+          name="fullName"
           placeholder="Full Name*"
           onChange={handleInputChange}
           className="outline-none border-none w-full h-full p-6 bg-transparent barlow text-lg barlow"
@@ -144,6 +148,7 @@ const Form1 = () => {
 
         <input
           type="number"
+          name="PhoneNumber"
           placeholder="Phone Number*"
           onChange={handleInputChange}
           className="col-span-9 outline-none border-none w-full h-full py-6 pe-2 text-lg barlow bg-transparent"
@@ -153,6 +158,7 @@ const Form1 = () => {
       <div className="col-span-2 h-full flex items-center">
         <input
           type="text"
+          name="EmailId"
           placeholder="Email Id*"
           onChange={handleInputChange}
           className="outline-none border-none w-full h-full py-6 px-2 bg-transparent barlow text-lg"
