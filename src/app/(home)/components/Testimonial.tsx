@@ -9,7 +9,12 @@ const TestimonialData = [
   {
     rating: 4,
     review:
-      "North Wind 57 in Bir Billing is straight-up awesome! The geodesic domes are super cool, and the mountain views and sunsets are next level. Close to the paragliding spot too, so it’s perfect if you’re into adventure. The food at their restaurant? Total win. Best glamping spot in Bir Billing for sure!",
+      "North Wind 57 in Bir Billing offers a truly one-of-a-kind glamping experience, blending comfort with stunning natural surroundings. The dome rooms are cozy and beautifully designed, perfect for a unique mountain retreat. Shilank’s thoughtful hospitality stands out, ensuring every guest feels right at home. With a lovely restaurant and serene lawn space, it’s an unforgettable escape for both relaxation and adventure.",
+  },
+  {
+    rating: 4,
+    review:
+      "Ideal place to plan your stay during your visit to bir billing - a adventure escape in himachal.Clean rooms, affordable tasty food,hospitality and humble staff is a addition to it. It's a haven for bird watchers and butterfly lovers.We just stayed 1 night and was memorable.",
   },
   {
     rating: 4,
@@ -19,17 +24,18 @@ const TestimonialData = [
   {
     rating: 4,
     review:
-      "North Wind 57 in Bir Billing is straight-up awesome! The geodesic domes are super cool, and the mountain views and sunsets are next level. Close to the paragliding spot too, so it’s perfect if you’re into adventure. The food at their restaurant? Total win. Best glamping spot in Bir Billing for sure!",
+      "North Wind 57 stands out among the best mountain hotels in Bir for its breathtaking mountain views, cozy ambiance, and excellent service. Located in Bir, Himachal Pradesh, this hotel offers easy access to popular attractions like paragliding in Bir Billing, making it an ideal choice for both nature lovers and adventure enthusiasts. The rooms are comfortable, well-equipped, and provide panoramic vistas, while the on-site restaurant serves delicious local cuisine. If you’re searching for a top-rated hotel in Bir, North Wind 57 is the perfect blend of comfort, scenic beauty, and convenience, making it one of the best Bir Billing hotels for a memorable mountain escape.",
   },
   {
     rating: 4,
     review:
-      "North Wind 57 in Bir Billing is straight-up awesome! The geodesic domes are super cool, and the mountain views and sunsets are next level. Close to the paragliding spot too, so it’s perfect if you’re into adventure. The food at their restaurant? Total win. Best glamping spot in Bir Billing for sure!",
+      "The location is just the right perfect, away from the main road but also a 3-4 minute walk leads you to the best eateries. Very quiet. Their common room provides views of scenic sunsets. My wife and I travelled with no itinerary, but Shilank was kind enough to welcome us, and spend time and provide us with cues on spots to visit and eat. All of them were great or exceeded our expectations.",
   },
+
   {
     rating: 4,
     review:
-      "North Wind 57 in Bir Billing is straight-up awesome! The geodesic domes are super cool, and the mountain views and sunsets are next level. Close to the paragliding spot too, so it’s perfect if you’re into adventure. The food at their restaurant? Total win. Best glamping spot in Bir Billing for sure!",
+      "North Wind 57 in Bir Billing is a gem for nature lovers and adventure seekers alike. The geodesic dome rooms provide a unique, cozy experience with breathtaking mountain views. Shilank’s warm hospitality makes the stay feel even more special, always attentive to guests’ needs. The on-site restaurant and small lawn area add to the peaceful charm, making it an ideal spot near the paragliding action.",
   },
 ];
 
@@ -71,8 +77,8 @@ const Testimonial = () => {
             classNameSwiperSlide="shadow-xl md:mt-12 mt-6"
           >
             {(card) => (
-              <div>
-                <div className={`max-w-[864px] mx-auto space-y-4`}>
+              <div className="md:min-h-52">
+                <div className={`max-w-[864px] mx-auto space-y-4 p-5`}>
                   <div className="flex justify-center items-center">
                     <RatingStar />
                   </div>
