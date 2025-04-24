@@ -4,7 +4,7 @@ const ExploreGlampData = [
   {
     title: "Premium Glamps",
     desc: "Experience the perfect blend of nature and comfort with our Premium Glamps. With luxurious interiors, comfy beds, and extensive activities to explore in the nearby areas, these glamps promise an unforgettable retreat. Wake up to stunning views, unwind in cozy outdoor seating, and enjoy the best of both worlds – the serenity of nature and the convenience of modern amenities. Our glamps offer the ideal escape for those seeking tranquility, adventure, and comfort. Perfect for couples, families, or groups. This stay will be an experience you'll cherish forever.",
-    price: "Price starting @ ₹7999/-",
+    price: "Price starting @ ₹8999/-",
     button: {
       label: "BOOK NOW",
       href: "/",
@@ -24,7 +24,7 @@ const ExploreGlampData = [
   {
     title: "Superior Glamps",
     desc: "Surrounded by nature, our Superior Glamp sites offer stunning mountain views and luxury amenities like high speed connectivity, entertainment screen and  state of the art sanitation services. Enjoy contemporary design and outdoor sitting areas for a truly comfortable stay",
-    price: "Price starting @ ₹6999/-",
+    price: "Price starting @ ₹7999/-",
     button: {
       label: "BOOK NOW",
       href: "/",
