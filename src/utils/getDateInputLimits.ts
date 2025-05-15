@@ -3,7 +3,6 @@ export function getDateInputLimits(options: {
   showFuture?: boolean;
 }) {
   const today = new Date().toISOString().split("T")[0]; // 'YYYY-MM-DD'
-  console.log(today);
 
   let min: string | undefined;
   let max: string | undefined;

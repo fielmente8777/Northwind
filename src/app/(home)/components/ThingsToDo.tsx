@@ -7,26 +7,21 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 const SliderData = [
   {
-    label: "Snowborading",
+    label: "Snowboarding",
     src: "/Northwind/snowbording.jpg",
-    alt: "",
   },
   {
     label: "Star Gazing",
     src: "/Northwind/star.jpg",
-    alt: "",
   },
   {
-    label: "Snowborading",
-    src: "/Northwind/snowbording.jpg",
-    alt: "",
-  },
-  {
-    label: "Star Gazing",
-    src: "/Northwind/star.jpg",
-    alt: "",
+    label: "Paragliding",
+    src: "/Northwind/paragliding.jpg",
   },
 ];
+
+const data =
+  SliderData.length > 4 ? SliderData : [...SliderData, ...SliderData];
 
 const ThingsToDo = () => {
   return (
@@ -42,7 +37,7 @@ const ThingsToDo = () => {
 
       <Section>
         <SliderSwip
-          data={SliderData}
+          data={data}
           slidesPerView={1}
           loop={true}
           spaceBetween={22}
@@ -70,12 +65,12 @@ const ThingsToDo = () => {
         >
           {(card) => (
             <div>
-              <div className={`relative max-w-full aspect-[4/2]`}>
+              <div className={`relative max-w-full aspect-[4/2.2]`}>
                 <Image
                   src={card?.src}
-                  alt={card?.alt}
+                  alt={card?.label}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-sm"
                 />
               </div>
               <h3 className="text-center text-text-dark md:text-3xl mt-6">
