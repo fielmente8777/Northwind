@@ -74,7 +74,7 @@ const Testimonial = () => {
               prevEl: ".we-prev",
             }}
             classNameSwiper={`w-full we-offer-slider `}
-            classNameSwiperSlide="shadow-xl md:mt-12 mt-6"
+            classNameSwiperSlide=" md:mt-12 mt-6"
           >
             {(card) => (
               <div className="md:min-h-52">

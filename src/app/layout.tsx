@@ -4,6 +4,7 @@ import "./styles/globals.scss";
 import "./styles/nav&button.scss";
 import { Call, Footer, Navbar } from "@/components";
 import Whatsapp from '../components/ContactButton/WhatsApp';
+import RenderChatBot from "@/components/chatbot/RenderChatBot";
 
 const geistSans = Gilda_Display({
   variable: "--font-geist-sans",
@@ -33,10 +34,12 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${barlow.variable} antialiased`}
       >
+        <RenderChatBot />
         <Navbar />
         {children}
         <Call callNumber="918091172065" />
         <Whatsapp whatsAppNumber="8091172065"/>
+
         <Footer />
       </body>
     </html>
