@@ -9,28 +9,12 @@ import PopUP from "../PopUp/PopUp";
 
 const Navbar = () => {
   const [openPopUp, setOpenPopUp] = useState(false);
-  // const pathName = usePathname();
-  // const [mobileMenu, setMobileMenu] = useState(false);
-  // useEffect(() => {
-  //   if (mobileMenu) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "auto";
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //   };
-  // }, [mobileMenu]);
+  
   return (
     <header className="max_screen bg-primary">
       <Container>
         <nav className="flex items-center justify-between">
-          {/* <div className="max-lg:block hidden">
-            <button className="lg:hidden" onClick={() => setMobileMenu(true)}>
-              <AiOutlineMenu size={25} color="#183f62" />
-            </button>
-            <MobileNav mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-          </div> */}
+         
 
           <div className="">
             <Link
@@ -46,78 +30,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* <ul className="lg:flex hidden item-center gap-10">
-            {NaveLinks?.slice(1, NaveLinks.length).map((link, index) => {
-              // const id = index + 1;
-              return (
-                <li key={index} className="relative nav">
-                  <Link
-                    href={link.href ? link.href : "#"}
-                    className="relative text-nowrap py-2 capitalize flex items-center gap-1 text-light font-semibold description1"
-                  >
-                    {link.name}
-                    <span className="span-border"></span>
-                    {link.subLinks && (
-                      <span className="group-hover:rotate-180 duration-300 transition-all ease-in-out">
-                        <DropDownIcon />
-                      </span>
-                    )}
-                  </Link>
-                  {link.subLinks && (
-                    <span className="nav-1">
-                      {link.subLinks.map((subLink, index) => {
-                        return (
-                          <>
-                            <span
-                              className="relative group nav-2"
-                              key={index + 1}
-                            >
-                              <Link
-                                href={subLink.href ? subLink.href : "#"}
-                                className={`w-full text-nowrap py-2 px-4 flex items-center gap-1 group capitalize text-light font-semibold description1 hover:bg-gray-200 ${pathName === subLink.href ? "bg-gray-200" : ""}`}
-                              >
-                                {subLink.name}
-                                {subLink.subLinks && (
-                                  <span className="group-hover:rotate-90 -rotate-90 duration-300 transition-all ease-in-out">
-                                    <DropDownIcon />
-                                  </span>
-                                )}
-                              </Link>
-                              {subLink.subLinks && (
-                                <span className="nav-link">
-                                  {subLink.subLinks?.map(
-                                    (nestedSubLink, nestedIndex) => {
-                                      return (
-                                        <span
-                                          className=""
-                                          key={nestedIndex + 2}
-                                        >
-                                          <Link
-                                            href={
-                                              nestedSubLink.href
-                                                ? nestedSubLink.href
-                                                : "#"
-                                            }
-                                            className={`w-full text-nowrap py-2 px-4 flex items-center text-light font-semibold description1 gap-1 group capitalize hover:bg-gray-200 ${pathName === subLink.href ? "bg-gray-200" : ""}`}
-                                          >
-                                            {nestedSubLink.name}
-                                          </Link>
-                                        </span>
-                                      );
-                                    }
-                                  )}
-                                </span>
-                              )}
-                            </span>
-                          </>
-                        );
-                      })}
-                    </span>
-                  )}
-                </li>
-              );
-            })}
-          </ul> */}
+       
           <OnlyButton
             onclick={() => {
               setOpenPopUp(true);

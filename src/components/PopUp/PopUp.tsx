@@ -11,32 +11,34 @@ const PopUP: React.FC<NewsLetterPopUPProps> = ({
   setOpenNewsLetter,
 }) => {
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Set interval only once on mount
   useEffect(() => {
-    if (openNewsLetter) {
-      document.body.style.overflow = "hidden";
-    }
     intervalIdRef.current = setInterval(() => {
       setOpenNewsLetter(true);
-      document.body.style.overflow = "hidden";
     }, 600000);
 
-    // Cleanup the interval when the component unmounts or modal is closed
     return () => {
       if (intervalIdRef.current) {
         clearInterval(intervalIdRef.current);
       }
     };
-  }, [setOpenNewsLetter, openNewsLetter]);
+  }, [setOpenNewsLetter]);
+
+  // Manage body overflow when modal opens/closes
+  useEffect(() => {
+    if (openNewsLetter) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [openNewsLetter]);
 
   const closeModal = useCallback(() => {
     setOpenNewsLetter(false);
-    document.body.style.overflow = "auto"; // Restore scrolling
-
-    // Clear the interval when the modal is closed
-    if (intervalIdRef.current) {
-      clearInterval(intervalIdRef.current);
-      intervalIdRef.current = null; // Reset the ref
-    }
   }, [setOpenNewsLetter]);
 
   return (

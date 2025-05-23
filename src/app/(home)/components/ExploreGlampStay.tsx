@@ -19,6 +19,14 @@ const ExploreGlampData = [
         alt: "Northwind-image",
       },
       {
+        src: "/pr02.jpg",
+        alt: "Northwind-image",
+      },
+      {
+        src: "/pr03.jpg",
+        alt: "Northwind-image",
+      },
+      {
         src: "/PXL_202.jpg",
         alt: "Northwind-image",
       },
@@ -48,6 +56,14 @@ const ExploreGlampData = [
       },
       {
         src: "/Northwind/sg2.jpg",
+        alt: "Northwind-image",
+      },
+      {
+        src: "/sp02.jpg",
+        alt: "Northwind-image",
+      },
+      {
+        src: "/sp03.jpg",
         alt: "Northwind-image",
       },
       {
