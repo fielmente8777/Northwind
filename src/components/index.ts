@@ -11,7 +11,7 @@ import {
   ServicesSection,
   FormSection,
 } from "./sectionComponents";
-import { Navbar, MobileNav } from "./navbar";
+import { Navbar } from "./navbar";
 import Footer from "./footer/Footer";
 import SliderSwip from "./SliderSwip";
 import {
@@ -39,7 +39,6 @@ export {
   TwoColSection2,
   ContactUsSection,
   Navbar,
-  MobileNav,
   Footer,
   SliderSwip,
   ServiceCard,
