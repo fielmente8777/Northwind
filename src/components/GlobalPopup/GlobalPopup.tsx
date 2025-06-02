@@ -12,7 +12,7 @@ const GlobalPopup = () => {
   useEffect(() => {
     intervalIdRef.current = setInterval(() => {
       setOpenNewsLetter(true);
-    }, 6000);
+    }, 60000);
 
     return () => {
       if (intervalIdRef.current) {
