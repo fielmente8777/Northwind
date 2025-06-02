@@ -21,7 +21,6 @@ const Form = () => {
 
   const checkInRef = useRef<HTMLInputElement | null>(null);
   const checkInOutRef = useRef<HTMLInputElement | null>(null);
-
   const dropDownRef3 = useRef<HTMLDivElement | null>(null);
   // const industries = useMemo(
   //   () => [
@@ -96,7 +95,7 @@ const Form = () => {
         setUserPhone("");
         // setCountryCode("+91"); // Reset country code
         setFormRes(false);
-        // router.push("/thank-you/");
+        window.open("/thank-you", "_blank");
       } else {
         setFormRes(false);
         alert("Something went wrong!");
@@ -248,7 +247,7 @@ const Form = () => {
                   spellCheck: "false",
                   rows: "3",
                   className:
-                    "w-full bg-transparent no-spinner p-3 resize-none placeholder:text-[#4C4C4C] focus:outline-none valid:outline-blue-primary invalid:outline-Saffron-primary barlow",
+                    "w-full bg-transparent no-spinner p-3 resize-none placeholder:text-[#4C4C4C] text-black focus:outline-none valid:outline-blue-primary invalid:outline-Saffron-primary barlow",
                 })}
           </div>
           {data.name === "phone" && errorMessage && (
