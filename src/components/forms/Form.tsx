@@ -74,7 +74,7 @@ const Form = () => {
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
           Domain: "northwind57",
-          // Domain: "", // Replace with your actual domain value
+          // Domain: "testmulti", // Replace with your actual domain value
           email: userEmail,
           Name: userName,
           Contact: userPhone, // Combine country code and phone number

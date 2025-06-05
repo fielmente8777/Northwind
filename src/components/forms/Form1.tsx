@@ -114,6 +114,7 @@ const Form1 = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
+          // Domain: "testmulti", // Replace with your actual domain value
           Domain: "northwind57", // Replace with your actual domain value
           email: formData?.EmailId,
           Name: formData?.fullName,
@@ -136,6 +137,7 @@ const Form1 = () => {
         });
         setSubmitSuccess(true);
         setTimeout(() => setSubmitSuccess(false), 3000);
+        window.open("/thank-you", "_blank");
       } else {
         setFormData({
           checkIn: "",
