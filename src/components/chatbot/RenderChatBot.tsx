@@ -31,6 +31,9 @@ const RenderChatBot = () => {
       .map(([key, value]) => `${key}: ${value}`)
       .join(",");
 
+    const checkInDate = formData["check-in"];
+    const checkOutDate = formData["check-out"];
+    const guest = formData["number of guest"];
     try {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
@@ -42,6 +45,9 @@ const RenderChatBot = () => {
           Name: `${name}`,
           Remark: "",
           Subject: null,
+          "check_in": `${checkInDate}`,
+          "check_out": `${checkOutDate}`,
+          "numbers_of_guest": `${guest}`,
           created_from: "Eazobot",
         },
         {

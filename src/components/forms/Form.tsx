@@ -79,6 +79,9 @@ const Form = () => {
           Name: userName,
           Contact: userPhone, // Combine country code and phone number
           Description: userMessage,
+          created_from: "website",
+          "check_in": `${checkInDate}`,
+          "check_out": `${checkOutDate}`,
         },
         {
           headers: {
@@ -93,6 +96,10 @@ const Form = () => {
         setUserEmail("");
         setUserMessage("");
         setUserPhone("");
+        setErrorMessage("");
+        setEmailErrorMessage("");
+        setCheckInDate("");
+        setCheckOutDate("");
         // setCountryCode("+91"); // Reset country code
         setFormRes(false);
         window.open("/thank-you", "_blank");

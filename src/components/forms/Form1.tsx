@@ -120,6 +120,9 @@ const Form1 = () => {
           Name: formData?.fullName,
           Contact: formData?.PhoneNumber, // Combine country code and phone number
           Description: `Check-in ${formData?.checkIn}, Check-out: ${formData?.checkOut},`,
+           "check_in": `${formData?.checkIn}`,
+          "check_out": `${formData?.checkOut}`,
+          created_from: "website",
         },
         {
           headers: {
