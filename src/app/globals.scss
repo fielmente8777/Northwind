@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gilda+Display&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.barlow {
+  font-family: "Barlow";
+}
+
+.gilda {
+  font-family: "Gilda Display";
+}
+
+@layer utilities {
+
+
+  /* no-spinner */
+
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield;
+    /* For Firefox */
+    appearance: textfield;
+    /* For modern browsers */
+  }
+
+  /* fonts */
+
+  .montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  /* colors */
+
+
+  @theme {
+    --color-primary: #EF6521;
+    --color-bg: #F8F5F0;
+    --color-dark: #222222;
+    --color-dark2: #343434;
+    --color-light: #444242;
+    --color-light2: #565656;
+    --color-light3: #737373;
+    --color-light4: #ADADAD;
+    --color-stroke: #E0E0E0;
+    --color-stroke1: #F3F3F3;
+    --color-tertiary: #9EC9E9;
+  }
+
+  .max-width {
+    max-width: 1224px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .max_screen {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .heading2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  @media (width < 768px) {
+    .heading2 {
+      font-size: 1.75rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+.common .pagination .swiper-pagination-bullet,
+.common .pagination_2 .swiper-pagination-bullet,
+.common .pagination_3 .swiper-pagination-bullet {
+  width: 0.875rem;
+  height: 0.8125rem;
+  aspect-ratio: 14/13;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  opacity: 1;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+.common .pagination .swiper-pagination-bullet-active,
+.common .pagination_2 .swiper-pagination-bullet-active,
+.common .pagination_3 .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+
+.accommodations-room-button {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    /* color: #0d0120; Default icon color */
+    color: #EF6521;
+    border-radius: 50%;
+    /* Make the buttons circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #EF6521;
+      /* Darker on hover */
+      color: #eeeeee;
+      transition: all 0.3s ease-in;
+    }
+
+    &::after {
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &::after {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+}
