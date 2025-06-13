@@ -232,7 +232,7 @@ export default function Home() {
 
 
       </SectionWithContainer> */}
-      <div className="grid md:grid-cols-2 max-w-[1600px] mx-auto">
+      <div className="grid md:grid-cols-2 max-w-[1600px] mx-auto md:bg-black">
         <div className="h-[300px] md:h-[700px] relative ">
           <Image src={"/contact.png"} alt="contact-image" className="absolute z-10 w-full h-full object-cover " fill />
 
