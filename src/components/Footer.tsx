@@ -11,20 +11,22 @@ const Footer = () => {
       <SectionWithContainer sectionClassName="bg-[#1B1B1B] text-[#FFFFFF]">
         <div className="flex flex-col gap-[40px] items-center">
           <Image src={"/logo.png"} alt="logo" height={48} width={258} className="mx-auto" />
-          <div className="flex flex-col gap-[24px] barlow">
-            <p className="text-center text-[18px] font-normal leading-[24px]">Location: Mouza Bir Khasra No 464 ,Bir, near Zostel, Baijnath, Himachal Pradesh 176077</p>
-            <p className="text-center text-[18px] font-normal leading-[24px]">Call: <Link href={"tel:+918091172065"}>+91 8091172065</Link></p>
-            <p className="text-center text-[18px] font-normal leading-[24px]">Email: <Link href={"mailto:northwind0057@gmail.com"}>northwind0057@gmail.com</Link></p>
+          <div className="flex flex-col justify-center items-center gap-[24px] barlow">
+            <p className="">Location: Mouza Bir Khasra No 464 ,Bir, near Zostel, Baijnath, Himachal Pradesh 176077</p>
+            <p className="">Call: <Link href={"tel:+918091172065"}>+91 8091172065</Link></p>
+            <p className="">Email: <Link href={"mailto:northwind0057@gmail.com"}>northwind0057@gmail.com</Link></p>
           </div>
         </div>
       </SectionWithContainer>
       <SectionWithContainer sectionClassName="bg-[#D4B01C] !py-4 text-[#363636]">
         <div className="flex items-center justify-center">
-          <ul className="list-disc flex lg:gap-10 gap-5 max-md:flex-col barlow">
-            <li className="text-[18px] font-normal leading-[24px]">© North Wind</li>
-            <li className="text-[18px] font-normal leading-[24px]">All Rights Reserved</li>
-            <li className="text-[18px] font-normal leading-[24px]">Designed & Developed by <Link href={"https://eazotel.com"} target="blank">Eazotel.com</Link></li>
-          </ul>
+          <div className="flex md:gap-2 items-center barlow">
+            <span className="flex items-center gap-1"><p className="text-2xl">©</p> North Wind</span>
+            •
+            <span className="">All Rights Reserved</span>
+            •
+            <span className="">Designed & Developed by <Link href={"https://eazotel.com"} target="blank">Eazotel.com</Link></span>
+          </div>
         </div>
       </SectionWithContainer>
     </footer>

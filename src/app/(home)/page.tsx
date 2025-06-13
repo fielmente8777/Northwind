@@ -65,7 +65,7 @@ const ShowDesc = ({ stars, quote }: Testimonial) => {
           <Star key={i} filled={i < stars} />
         ))}
       </div>
-      <p className="barlow font-normal text-[18px] leading-[24px] text-center max-w-[864px] mx-auto align-middle">
+      <p className="barlow font-normal text-[#6D6D6D] text-center max-w-[864px] mx-auto align-middle">
         {quote}
       </p>
     </div>
@@ -153,7 +153,7 @@ export default function Home() {
             <span className="font-normal barlow text-[16px] leading-[24px] text-center">WELCOME TO ROMANCY</span>
             <h2 className="font-normal gilda text-[48px] text-center">At Northwind</h2>
           </div>
-          <p className="text-center barlow font-normal text-[18px] leading-[24px] text-[#6D6D6D]">We offer a unique blend of luxury and adventure in the heart of Bir, Himachal Pradesh. Our glamping campsite provides a perfect escape from the hustle and bustle of daily life, allowing you to immerse yourself in the serene beauty of the Himalayas. Wake up to breathtaking views of the mighty mountains, enjoy trekking and paragliding, and unwind with live music sessions around a bonfire under the starlit sky. Whether you seek adventure or tranquility, Northwind guarantees an unforgettable experience</p>
+          <p className="text-center barlow font-normal  text-[#6D6D6D]">We offer a unique blend of luxury and adventure in the heart of Bir, Himachal Pradesh. Our glamping campsite provides a perfect escape from the hustle and bustle of daily life, allowing you to immerse yourself in the serene beauty of the Himalayas. Wake up to breathtaking views of the mighty mountains, enjoy trekking and paragliding, and unwind with live music sessions around a bonfire under the starlit sky. Whether you seek adventure or tranquility, Northwind guarantees an unforgettable experience</p>
           <Link href={"#contact-us"} className="bg-[#D4B01C] px-[24px] py-[12px] text-white text-center items-center">BOOK YOUR STAY</Link>
         </div>
       </SectionWithContainer>
@@ -218,21 +218,36 @@ export default function Home() {
           </div>
         </div>
       </SectionWithContainer>
-      <SectionWithContainer sectionClassName="!py-0">
-        <div className="w-full h-[784px] max-md:h-[1050px] flex bg-black max-md:flex-col max-md:px-4 max-md:py-5 max-md:gap-[40px]">
-          <Image src={"/contact.png"} alt="contact-image" className="object-" height={784} width={720} />
-          <div className="w-full items-center justify-items-center my-auto lg:px-6">
+      {/* <SectionWithContainer sectionClassName="!py-0">
+       
+        <div className="grid grid-cols-2 bg-black">
+          <div>
+            <Image src={"/contact.png"} alt="contact-image" className="object-" height={784} width={720} />
+
+          </div>
+          <div className="w-full items-center justify-items-center my-auto px-10">
             <ContactForm />
           </div>
         </div>
-      </SectionWithContainer>
+
+
+      </SectionWithContainer> */}
+      <div className="grid grid-cols-2 bg-black max-w-[1600px] mx-auto">
+        <div className="h-[700px] relative">
+          <Image src={"/contact.png"} alt="contact-image" className="absolute z-10 w-full h-full " fill />
+
+        </div>
+        <div className="w-full items-center justify-items-center my-auto px-10">
+          <ContactForm />
+        </div>
+      </div>
       <SectionWithContainer sectionClassName="bg-[#FFFBED]">
-        <div className="flex flex-col gap-[40px] max-w-[1224px] mx-auto">
+        <div className="flex flex-col gap-[40px] max-w-[1224px] mx-auto py-10">
           <div className="flex flex-col gap-4 text-[#262626] text-center">
             <span className="font-normal text-[16px] leading-[24px] barlow">HEAR FROM OUR</span>
             <h2 className="font-normal text-[48px] gilda">Northwind Explorers</h2>
           </div>
-          <div className="md:py-14  flex items-center justify-center md:gap-20 w-full">
+          <div className=" flex items-center justify-center md:gap-20 w-full">
             <button className="prev">
               <span className="sr-only">previous button</span>
               <PrevButton />

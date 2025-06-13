@@ -17,6 +17,7 @@ const ContactForm = () => {
     countryCode: "+91",
     checkIn: "",
     checkOut: "",
+    Number_Of_guest: ""
   });
 
   const [otpSent, setOtpSent] = useState(false);
@@ -112,10 +113,13 @@ const ContactForm = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "smartspendhub",
+          Domain: "northwind",
           email: formData.userEmail,
           Name: formData.userName,
           Contact: formData.userPhone,
+          check_in: formData.checkIn,
+          check_out: formData.checkOut,
+          number_of_guest: formData.Number_Of_guest,
           Description: `Check-in: ${formData.checkIn}, Check-out: ${formData.checkOut}`,
           Remark: formData.userMessage,
         },
@@ -160,7 +164,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       className="bg-black rounded-md w-full max-w-xl mx-auto text-white flex flex-col gap-4"
     >
-      <h2 className="text-2xl font-semibold">Contact Us Now!</h2>
+      <h2 className="text-2xl font-modern gilda">Contact Us Now!</h2>
 
       <input
         name="userName"
@@ -237,7 +241,7 @@ const ContactForm = () => {
 
       <button
         type="submit"
-        className="bg-[#D4AF37] text-black font-semibold py-3 rounded-md hover:bg-[#caa732] transition"
+        className="bg-[#D4AF37] text-white font-semibold py-3 rounded-md hover:bg-[#caa732] transition"
       >
         {formRes ? "Submitting..." : "BOOK YOUR STAY"}
       </button>
