@@ -25,11 +25,11 @@ const Rooms: React.FC<RoomsProps> = ({ item }) => {
 
   return (
     <div
-      className={`flex w-full h-auto gap-10 ${isLeft ? "flex-row" : "flex-row-reverse"
+      className={`flex w-full h-auto md:gap-10 ${isLeft ? "flex-row" : "flex-row-reverse"
         } max-md:flex-col`}
     >
       {/* Image Section */}
-      <div className="relative w-[65%] max-md:w-full h-[546px] max-md:h-[300px] bg-[#D4B01C]">
+      <div className="relative w-[65%] max-md:w-full md:h-[546px] max-md:h-[300px] bg-[#D4B01C]">
         <div
           className={`absolute z-10 w-full h-full ${isLeft
             ? "top-[10px] left-[10px] max-md:left-[5px]"

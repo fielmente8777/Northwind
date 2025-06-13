@@ -99,7 +99,7 @@ const activities: Activity[] = [
 
 const Rendered = ({ image, title }: Activity) => {
   return (
-    <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[800px] h-[400px] rounded-[6px] overflow-hidden shadow-lg">
+    <div className="relative w-full md:max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[800px] h-[400px] rounded-[6px] overflow-hidden shadow-lg">
       <Image
         src={image}
         alt={title}
@@ -148,8 +148,8 @@ export default function Home() {
         </div>
       </Banner>
       <SectionWithContainer>
-        <div className="flex flex-col gap-[32px] items-center">
-          <div className="flex flex-col gap-[16px] text-[#262626]">
+        <div className="flex flex-col gap-5 md:gap-[32px] max-md:py-10 items-center">
+          <div className="flex flex-col gap-3 md:gap-[16px] text-[#262626]">
             <span className="font-normal barlow text-[16px] leading-[24px] text-center">WELCOME TO ROMANCY</span>
             <h2 className="font-normal gilda text-[48px] text-center">At Northwind</h2>
           </div>
@@ -158,20 +158,20 @@ export default function Home() {
         </div>
       </SectionWithContainer>
       <SectionWithContainer sectionClassName="bg-[#FFFBED]">
-        <div className="flex flex-col gap-[56px]">
-          <div className="flex flex-col gap-[16px] text-[#262626]">
+        <div className="flex flex-col gap-10 md:gap-[56px] max-md:py-4 ">
+          <div className="flex flex-col gap-3 md:gap-[16px] text-[#262626]">
             <span className="font-normal barlow text-[16px] leading-[24px] text-center">EXPLORE OUR GLAMP STAYS</span>
             <h2 className="font-normal gilda text-[48px] text-center">Northwind57- Bir</h2>
           </div>
-          <div className="flex flex-col gap-[80px]">
+          <div className="flex flex-col gap-10 md:gap-[80px]">
             <Rooms item={item[0]} />
             <Rooms item={item[1]} />
           </div>
         </div>
       </SectionWithContainer>
       <SectionWithContainer>
-        <div className="flex flex-col gap-[56px]">
-          <div className="flex flex-col gap-[16px] text-[#262626]">
+        <div className="flex flex-col gap-10 md:gap-[56px] max-md:py-10">
+          <div className="flex flex-col gap-3 md:gap-[16px] text-[#262626]">
             <span className="font-normal barlow text-[16px] leading-[24px] text-center">THINGS TO DO</span>
             <h2 className="font-normal gilda text-[48px] text-center">Experience the Best of Bir</h2>
           </div>
@@ -232,17 +232,17 @@ export default function Home() {
 
 
       </SectionWithContainer> */}
-      <div className="grid grid-cols-2 bg-black max-w-[1600px] mx-auto">
-        <div className="h-[700px] relative">
-          <Image src={"/contact.png"} alt="contact-image" className="absolute z-10 w-full h-full " fill />
+      <div className="grid md:grid-cols-2 max-w-[1600px] mx-auto">
+        <div className="h-[300px] md:h-[700px] relative ">
+          <Image src={"/contact.png"} alt="contact-image" className="absolute z-10 w-full h-full object-cover " fill />
 
         </div>
-        <div className="w-full items-center justify-items-center my-auto px-10">
+        <div className="w-full items-center justify-items-center my-auto p-5 md:px-10 md:py-10 ">
           <ContactForm />
         </div>
       </div>
       <SectionWithContainer sectionClassName="bg-[#FFFBED]">
-        <div className="flex flex-col gap-[40px] max-w-[1224px] mx-auto py-10">
+        <div className="flex flex-col gap-10 md:gap-[40px] max-w-[1224px] mx-auto py-10">
           <div className="flex flex-col gap-4 text-[#262626] text-center">
             <span className="font-normal text-[16px] leading-[24px] barlow">HEAR FROM OUR</span>
             <h2 className="font-normal text-[48px] gilda">Northwind Explorers</h2>

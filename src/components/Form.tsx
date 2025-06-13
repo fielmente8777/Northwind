@@ -162,7 +162,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-black rounded-md w-full max-w-xl mx-auto text-white flex flex-col gap-4"
+      className="bg-black rounded-md w-full max-w-xl mx-auto text-white flex max-md:p-5 flex-col gap-4"
     >
       <h2 className="text-2xl font-modern gilda">Contact Us Now!</h2>
 
