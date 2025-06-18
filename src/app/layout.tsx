@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Nunito } from "next/font/google";
 import "./globals.scss";
+import RenderChatBot from "@/components/chatbot/RenderChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,8 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Northwind",
-  description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, inventore.",
+  description:
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, inventore.",
 };
 
 export default function RootLayout({
@@ -28,6 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${nunito.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <RenderChatBot />
         {children}
       </body>
     </html>
