@@ -57,7 +57,7 @@ const DiscountPopup = ({
         >
           <div className="max-w-[440px] flex flex-col justify-center items-center w-full mx-auto space-y-8 z-50">
             {logo && (
-              <div className="relative max-w-56 w-full aspect-[6/3]">
+              <div className="relative max-w-56 w-full aspect-[6/2.5]">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
