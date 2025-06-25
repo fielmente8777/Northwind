@@ -73,7 +73,7 @@ const RenderChatBot = () => {
         messageFlows={messageFlows}
         title="North Wind 57"
         theme={"#D4B01C"}
-        openInterval={2000}
+        openInterval={15000}
         logo={"/favicon.ico"}
       />
     </div>
