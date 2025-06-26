@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import "./discount.css";
+import { usePathname } from "next/navigation";
 interface DiscountPopupProps {
   logo: {
     src: string;
@@ -38,6 +39,7 @@ const DiscountPopup = ({
   content,
 }: DiscountPopupProps) => {
   const [show, setShow] = useState(false);
+  const pathName = usePathname();
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -46,6 +48,8 @@ const DiscountPopup = ({
 
     return () => clearTimeout(id);
   }, []);
+
+  if (pathName === "/thank-you/") return null;
   return (
     show && (
       <div className="fixed inset-0 bg-black/40 flex items-center z-50">
