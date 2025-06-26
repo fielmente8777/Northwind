@@ -52,7 +52,7 @@ const DiscountPopup = ({
   if (pathName === "/thank-you/") return null;
   return (
     show && (
-      <div className="fixed inset-0 bg-black/40 flex items-center z-50">
+      <div className="fixed inset-0 bg-black/40 flex items-center z-50 px-4">
         <div
           className="max-w-4xl w-full rounded-md p-6 mx-auto flex flex-col items-center justify-center bg-white bg-cover bg-center bg-no-repeat min-h-[540px] relative"
           style={{
