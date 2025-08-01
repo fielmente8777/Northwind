@@ -2,6 +2,7 @@
 
 import SwiperCarousel from "@/components/SwiperCarousel";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Navigation } from "swiper/modules";
 
@@ -77,9 +78,9 @@ const Rooms: React.FC<RoomsProps> = ({ item }) => {
         <h3 className="text-[#D98600] text-xl font-modern mt-2">
           Price starting @ ₹{item.cost}/-
         </h3>
-        <button className="bg-[#D4B01C] text-white font-semibold px-6 py-3 rounded-md w-fit mt-4 hover:bg-yellow-500 transition">
+        <Link target="_blank" rel="noreferrer" href="https://wa.me/+918091172065?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates." className="bg-[#D4B01C] text-white font-semibold px-6 py-3 rounded-md w-fit mt-4 hover:bg-yellow-500 transition">
           BOOK NOW
-        </button>
+        </Link>
       </div>
     </div>
   );

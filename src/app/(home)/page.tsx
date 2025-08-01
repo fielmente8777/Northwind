@@ -154,7 +154,7 @@ export default function Home() {
             <h2 className="font-normal gilda text-[48px] text-center">At Northwind</h2>
           </div>
           <p className="text-center barlow font-normal  text-[#6D6D6D]">We offer a unique blend of luxury and adventure in the heart of Bir, Himachal Pradesh. Our glamping campsite provides a perfect escape from the hustle and bustle of daily life, allowing you to immerse yourself in the serene beauty of the Himalayas. Wake up to breathtaking views of the mighty mountains, enjoy trekking and paragliding, and unwind with live music sessions around a bonfire under the starlit sky. Whether you seek adventure or tranquility, Northwind guarantees an unforgettable experience</p>
-          <Link href={"#contact-us"} className="bg-[#D4B01C] px-[24px] py-[12px] text-white text-center items-center">BOOK YOUR STAY</Link>
+          <Link target="_blank" rel="noreferrer" href={"https://wa.me/+918091172065?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates."} className="bg-[#D4B01C] px-[24px] py-[12px] text-white text-center items-center">BOOK YOUR STAY</Link>
         </div>
       </SectionWithContainer>
       <SectionWithContainer sectionClassName="bg-[#FFFBED]">
