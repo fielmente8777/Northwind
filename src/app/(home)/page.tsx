@@ -132,7 +132,7 @@ const item = [
       "Surrounded by nature, our Superior Glamp sites offer stunning mountain views and luxury amenities like high speed connectivity, entertainment screen and  state of the art sanitation services. Enjoy contemporary design and outdoor sitting areas for a truly comfortable stay.",
     cost: 7999,
     id: 2,
-    imageUrls: ["/superior/s1.webp", "/superior/s2.webp", "/superior/s3.webp", "/superior/s4.webp", "/superior/s5.webp"],
+    imageUrls: ["/IMG_20250712_072623.jpg", "/superior/s2.webp", "/superior/s3.webp", "/superior/s4.webp", "/superior/s5.webp"],
     position: "right"
   },
 ]
@@ -141,7 +141,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Banner imageUrl="/header.png" center={true}>
+      <Banner imageUrl="/IMG_20250712_072619.jpg" center={true}>
         <div>
           <span className="barlow font-normal text-[32px] text-[#FFFFFF] max-md:text-[18px]">Your Glamping Adventure Awaits</span>
           <h1 className="gilda font-normal text-[56px] text-[#FFFFFF] max-md:text-[28px]">Escape to Northwind: Where Luxury Meets Great Outdoors</h1>

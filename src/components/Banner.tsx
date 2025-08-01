@@ -11,13 +11,14 @@ interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({ imageUrl, children, center = false }) => {
     return (
-        <div className="relative max-w-[1600px] max-h-[800px] w-full h-[40vh] mx-auto lg:h-screen">
+        <div className="relative max-w-[1600px]  w-full overflow-hidden md:aspect-[16/7] aspect-square mx-auto">
             <Image
                 src={imageUrl}
                 alt="Banner Image"
                 fill
-                className="object-contain max-md:object-fill"
+                className="object-cover max-md:object-fill"
                 priority
+                quality={100}
             />
             <div className="absolute inset-0 bg-black/30 z-10" />
             <div className="absolute inset-0 flex items-center justify-center z-20">
