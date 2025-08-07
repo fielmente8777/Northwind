@@ -45,9 +45,9 @@ const RenderChatBot = () => {
           Name: `${name}`,
           Remark: "",
           Subject: null,
-          "check_in": `${checkInDate}`,
-          "check_out": `${checkOutDate}`,
-          "numbers_of_guest": `${guest}`,
+          check_in: `${checkInDate}`,
+          check_out: `${checkOutDate}`,
+          numbers_of_guest: `${guest}`,
           created_from: "Eazobot",
         },
         {
@@ -56,7 +56,6 @@ const RenderChatBot = () => {
           },
         }
       );
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
