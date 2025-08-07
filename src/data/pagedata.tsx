@@ -14,6 +14,8 @@ import {
 } from "./icons";
 import { imagesLink } from "./links";
 
+export const whatsAppNumber = "8091172065";
+
 export const homePageData = {
   bannnerData: {
     title: "Your Glamping Adventure Awaits",

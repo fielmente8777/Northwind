@@ -1,6 +1,8 @@
 "use client";
 import { SectionWithContainer } from "@/components";
 import PopUP from "@/components/PopUp/PopUp";
+import { whatsAppNumber } from "@/data/pagedata";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const BookYourStay = () => {
@@ -28,12 +30,14 @@ const BookYourStay = () => {
         </p>
 
         <div className="flex justify-center">
-          <button
-            onClick={() => setOpenPopUp(true)}
+          <Link
+            href={`https://wa.me/+91${whatsAppNumber}?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`}
+            target="_blank"
+            // onClick={() => setOpenPopUp(true)}
             className="bg-primary hover:bg-secondary mx-auto duration-300 transition-all ease-in-out px-4 py-2 text-sm text-white barlow rounded-md "
           >
             BOOK YOUR STAY
-          </button>
+          </Link>
         </div>
 
         <PopUP openNewsLetter={openPopUp} setOpenNewsLetter={setOpenPopUp} />

@@ -56,6 +56,7 @@ const RenderChatBot = () => {
           },
         }
       );
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -70,7 +71,7 @@ const RenderChatBot = () => {
         messageFlows={messageFlows}
         title="North Wind 57"
         theme={"#D4B01C"}
-        openInterval={2000}
+        openInterval={40000}
         logo={"/logo1.png"}
       />
     </div>

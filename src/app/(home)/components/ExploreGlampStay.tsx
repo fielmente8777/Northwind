@@ -1,4 +1,5 @@
 import { SectionWithContainer, TwoColSection2 } from "@/components";
+import { whatsAppNumber } from "@/data/pagedata";
 
 const ExploreGlampData = [
   {
@@ -7,7 +8,7 @@ const ExploreGlampData = [
     price: "Price starting @ ₹8999/-",
     button: {
       label: "BOOK NOW",
-      href: "/",
+      href: `https://wa.me/+91${whatsAppNumber}?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`,
     },
     images: [
       {
@@ -47,7 +48,7 @@ const ExploreGlampData = [
     price: "Price starting @ ₹7999/-",
     button: {
       label: "BOOK NOW",
-      href: "/",
+      href: `https://wa.me/+91${whatsAppNumber}?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`,
     },
     images: [
       {

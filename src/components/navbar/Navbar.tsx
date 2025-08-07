@@ -1,21 +1,20 @@
 "use client";
+
 import { OutlinePhone } from "@/data/icons";
+import { whatsAppNumber } from "@/data/pagedata";
 import Image from "next/image";
 import Link from "next/link";
-import { Container } from "../sectionComponents";
-import { OnlyButton } from "../buttons";
 import { useState } from "react";
 import PopUP from "../PopUp/PopUp";
+import { Container } from "../sectionComponents";
 
 const Navbar = () => {
   const [openPopUp, setOpenPopUp] = useState(false);
-  
+
   return (
     <header className="max_screen bg-primary">
       <Container>
         <nav className="flex items-center justify-between">
-         
-
           <div className="">
             <Link
               href={"/"}
@@ -30,11 +29,13 @@ const Navbar = () => {
             </Link>
           </div>
 
-       
-          <OnlyButton
-            onclick={() => {
-              setOpenPopUp(true);
-            }}
+          <Link
+            href={`https://wa.me/+91${whatsAppNumber}?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`}
+            target="_blank"
+
+            // onclick={() => {
+            //   setOpenPopUp(true);
+            // }}
           >
             {/* <span className="">
               <OutlinePhone className="fill-current stroke-currentColor md:w-7 aspect-square" />
@@ -45,7 +46,7 @@ const Navbar = () => {
             <span className="md:hidden block">
               <OutlinePhone />
             </span>
-          </OnlyButton>
+          </Link>
         </nav>
         <PopUP openNewsLetter={openPopUp} setOpenNewsLetter={setOpenPopUp} />
       </Container>
