@@ -1,11 +1,10 @@
+import { Call, Footer, Navbar } from "@/components";
 import type { Metadata } from "next";
-import { Gilda_Display, Barlow } from "next/font/google";
+import { Barlow, Gilda_Display } from "next/font/google";
+import Script from "next/script";
+import Whatsapp from "../components/ContactButton/WhatsApp";
 import "./styles/globals.scss";
 import "./styles/nav&button.scss";
-import { Call, Footer, Navbar } from "@/components";
-import Whatsapp from "../components/ContactButton/WhatsApp";
-import RenderChatBot from "@/components/chatbot/RenderChatBot";
-import Script from "next/script";
 
 const geistSans = Gilda_Display({
   variable: "--font-geist-sans",
@@ -66,13 +65,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
 
-        <RenderChatBot />
         <Navbar />
         {children}
         <Call callNumber="918091172065" />
         <Whatsapp whatsAppNumber="8091172065" />
 
         <Footer />
+        <Script id="eazbot" strategy="afterInteractive" >
+          {`window.eazbotConfig = {
+            ndid: "ae33a698-1945-4713-bf00-df0c9640ac0f",
+            hid: "17917506",
+          };`}
+        </Script>
+        <Script id="lead-chatbot" src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script>
       </body>
     </html>
   );
