@@ -1,0 +1,327 @@
+@layer utilities {
+  a,
+  button {
+    cursor: pointer;
+  }
+  .demo {
+    .swiper {
+      pointer-events: none;
+    }
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+  }
+
+  .box-shadow {
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+  }
+
+  // container sizes
+
+  .max_screen_width {
+    max-width: 1600px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  // container sizes for xl, lg, md, sm screens
+
+  .max_width {
+    max-width: 100%;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    @media (min-width: 768px) {
+      max-width: 720px;
+      padding-inline: 1rem;
+    }
+    @media (min-width: 992px) {
+      max-width: 960px;
+      padding-inline: 1rem;
+    }
+    @media (min-width: 1200px) {
+      max-width: 1140px;
+      padding-inline: 1rem;
+    }
+    @media (min-width: 1400px) {
+      max-width: 1320px;
+      padding-inline: 0;
+    }
+  }
+}
+
+.accommodation-pagination {
+  position: absolute !important;
+  bottom: 4px !important;
+  left: 65% !important;
+  width: fit-content !important;
+  z-index: 999;
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 1.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    z-index: 9999;
+    pointer-events: auto;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.5;
+
+    .bullet-label {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      pointer-events: none; // ✅ text won’t block click
+    }
+
+    &.swiper-pagination-bullet-active {
+      color: var(--color-primary);
+      scale: 1.05;
+      opacity: 1;
+    }
+  }
+}
+
+.pagination {
+  .swiper-pagination-bullet {
+    background: #ffffff;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .swiper-pagination-bullet-active {
+    background: #ffffff;
+  }
+}
+
+input {
+  @media (width < 768px) {
+    padding: 0.8rem !important;
+  }
+}
+
+.our-packages {
+  position: relative;
+  .span,
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    inset: 0;
+    background-color: #003232;
+    z-index: -2;
+  }
+  &::after {
+    background-image: url("/icons/group4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 65px;
+    z-index: -1;
+    @media (width < 780px) {
+      width: 25px;
+      height: 30px;
+    }
+  }
+  .span {
+    background-image: url("/icons/Group7.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    right: 0;
+    width: 113px;
+    height: 74px;
+    z-index: 1;
+    @media (width < 780px) {
+      width: 50px;
+      height: 30px;
+    }
+  }
+}
+
+.soul-care-gallery,
+.about-soul,
+.about-soul-care,
+.wellness-services,
+.wellness-wrapper {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+}
+.wellness-services {
+  &::before {
+    inset: 0;
+    background-color: #003232;
+    z-index: -2;
+  }
+  &::after {
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("/soul-care/group1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (width < 780px) {
+      height: 400px;
+    }
+  }
+}
+
+.wellness-wrapper {
+  &::before {
+    top: -2rem;
+    left: 0;
+    width: 38px;
+    height: 32px;
+    z-index: 1;
+    background-image: url("/soul-care/x38.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (width < 780px) {
+      height: 400px;
+    }
+  }
+}
+.about-soul-care {
+  &::before {
+    top: -2rem;
+    left: 0;
+    width: 38px;
+    height: 32px;
+    z-index: 1;
+    background-image: url("/soul-care/x8_7.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.about-soul {
+  &::before {
+    top: 5rem;
+    left: 2rem;
+    width: 448px;
+    height: 383px;
+    z-index: -1;
+    background-image: url("/soul-care/im7.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (width < 780px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    top: 0;
+    right: 0;
+    width: 139px;
+    height: 123px;
+    z-index: -1;
+    background-image: url("/soul-care/group48.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (width < 780px) {
+      height: 400px;
+    }
+  }
+}
+
+.soul-care-gallery {
+  &::before {
+    bottom: -1.5rem;
+    right: 0.5rem;
+    width: 448px;
+    height: 383px;
+    z-index: -1;
+    background-image: url("/soul-care/im7.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (width < 780px) {
+      display: none;
+    }
+  }
+}
+
+.nearby-card {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    // border: 1px solid var(--secondary);
+    background-color: #fff;
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      color: var(--primary);
+      width: 20px;
+      height: 20px;
+    }
+    @media (width < 768px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.experience-card {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    // border: 1px solid var(--secondary);
+    background-color: #fff;
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      color: var(--primary);
+      width: 20px;
+      height: 20px;
+    }
+    @media (width < 768px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.rooms-card {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    // border: 1px solid var(--secondary);
+    background-color: #fff;
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      color: var(--primary);
+      width: 20px;
+      height: 20px;
+    }
+    @media (width < 768px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
