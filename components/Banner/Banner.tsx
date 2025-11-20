@@ -4,6 +4,9 @@ import { LazyLoadedVideo } from "../Video";
 import { footerData } from "../footer/footerdata";
 import Link from "next/link";
 
+import { FaPhoneAlt } from "react-icons/fa";
+import { contact } from "@/utils/constent";
+
 interface BannerProps {
   src: string;
   videoSrc?: string;
@@ -37,8 +40,8 @@ const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
         />
       )}
 
-      <div className="absolute z-20 top-0 left-1/2 transform -translate-x-1/2">
-        <div className="relative lg:w-[300px] w-[100px] aspect-4/1">
+      <div className="absolute md:w-fit w-full z-20 top-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center px-5 md:bg-transparent bg-primary">
+        <div className="relative lg:w-[300px] w-[200px] aspect-4/1">
           <Image
             src={"/images/Northwind-logo.png"}
             alt="logo"
@@ -46,14 +49,22 @@ const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
             className="object-contain"
           />
         </div>
+
+        <Link
+          href={`tel:${contact.phone[0]}`}
+          target="_blank"
+          className="text-white text-4xl md:hidden block"
+        >
+          <FaPhoneAlt size={22} />
+        </Link>
       </div>
 
-      <div className="md:absolute top-1/2 left-26 -translate-y-1/2 md:max-w-[609px] w-full text-white space-y-2 md:px-0 px-4">
+      <div className="absolute z-50 top-1/2 md:left-26 -translate-y-1/2 md:max-w-[609px] w-full text-white space-y-2 md:px-0 px-4">
         <h2 className="md:text-2xl flex items-center gap-4 barlow">
           {title}
           <span className="w-26 h-0.5 bg-primary inline-blocks"></span>
         </h2>
-        <h3 className="md:text-6xl text-4xl bg-linear-to-r from-white to-primary/60 bg-clip-text text-transparent font-bold barlow">
+        <h3 className="md:text-6xl/[4.5rem] text-4xl bg-linear-to-b from-white to-primary bg-clip-text text-transparent font-bold barlow ">
           {subTitle}
         </h3>
       </div>

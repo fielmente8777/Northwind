@@ -7,6 +7,7 @@ import LinkButton from "../buttons/LinkButton";
 import { contact } from "@/utils/constent";
 import { Container } from "../sectionComponants";
 import { subscribe } from "diagnostics_channel";
+import Form1 from "../forms/Form1";
 
 const Footer = () => {
   const pathName = usePathname();
@@ -17,7 +18,7 @@ const Footer = () => {
   const data = pathName !== "/" ? footerData : footerData2;
 
   return (
-    <footer className="max_screen_width bg-primary">
+    <footer className="max_screen_width bg-primary md:pt-20 pt-0 relative">
       <Container>
         <div className="grid md:py-12 py-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4">
           <div className="md:max-w-[300px] flex flex-col gap-4 items-center">
@@ -139,6 +140,27 @@ const Footer = () => {
           </div>
         </Container>
       </div>
+
+      <div
+        className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[35%] h-44 bg-no-repeat bg-contain bg-center md:block hidden"
+        style={{
+          backgroundImage: `url('/images/Mountains.png')`,
+        }}
+      />
+
+      <div
+        className="absolute right-0 md:bottom-16 bottom-30 w-20 h-20 bg-contain bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/images/Tree.png')`,
+        }}
+      />
+
+      <div
+        className="absolute left-0 bottom-16 w-20 h-20 bg-contain bg-no-repeat md:block hidden"
+        style={{
+          backgroundImage: `url('/images/Leaf.png')`,
+        }}
+      />
     </footer>
   );
 };

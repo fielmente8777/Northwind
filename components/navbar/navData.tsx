@@ -7,11 +7,11 @@ export const navUpper = [
     href: contact.addressLink,
     icon: <FillLocationIcon />,
   },
-  {
-    label: contact.email,
-    href: "mailto:" + contact.email,
-    icon: <FillMailIcon />,
-  },
+  // {
+  //   label: contact.email,
+  //   href: "mailto:" + contact.email,
+  //   icon: <FillMailIcon />,
+  // },
   {
     label: contact.phone[0],
     href: "tel:" + contact.phone[0],

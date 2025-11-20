@@ -34,11 +34,12 @@ const Welcome = ({
     <Section className="p-0!">
       <div className="relative w-full">
         <div
-          className="absolute left-0 top-0 w-[35%] h-full bg-cover bg-center"
+          className="absolute left-0 md:top-0 w-[35%] h-full bg-cover bg-center md:block hidden"
           style={{
             backgroundImage: `url('/images/Mountains.png')`,
           }}
         />
+
         <div className="flex flex-col gap-1.5 items-center barlow">
           <span>{location.label}</span>
           <h2 className="text-center md:text-2xl text-primary font-medium">
@@ -47,7 +48,7 @@ const Welcome = ({
         </div>
 
         <div
-          className="absolute right-0 top-0 w-[35%] h-full bg-cover bg-center"
+          className="absolute right-0 top-0 w-[35%] h-full bg-cover bg-center md:block hidden"
           style={{
             backgroundImage: `url('/images/Mountains.png')`,
           }}

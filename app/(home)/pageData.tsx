@@ -120,7 +120,7 @@ export const pageData = {
     cards: [
       {
         icon: <TripAdvisorRatingIcon />,
-        src: "/images/TripAdvisor-logo.png",
+        src: "/images/Tripadvisor-Logo.png",
         partnerName: "TripAdvisor",
         ratings: "4.5/5",
       },

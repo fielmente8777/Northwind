@@ -75,8 +75,7 @@ const Navbar: React.FC = () => {
     getTemp();
   }, [getTemp]);
 
-
-  if(pathName === "/thank-you/"){
+  if (pathName === "/thank-you/") {
     return null;
   }
 
@@ -100,10 +99,13 @@ const Navbar: React.FC = () => {
                   </div>
                 )}
               </li>
-              {navUpper?.slice(0, 2).map((link, index) => (
+              {navUpper?.slice(0, 1).map((link, index) => (
                 <li key={index} className="flex items-center text-white gap-2">
                   <span>{link.icon}</span>
-                  <Link href={link.href? link.href : "#"} className="text-white">
+                  <Link
+                    href={link.href ? link.href : "#"}
+                    className="text-white"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -120,13 +122,13 @@ const Navbar: React.FC = () => {
             </ul>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <span>{navUpper[2].icon}</span>
+                <span>{navUpper[1].icon}</span>
                 <Link
-                  href={navUpper[2].href}
+                  href={navUpper[1].href}
                   className="flex flex-col text-white"
                 >
                   <span className="">Call Us Now</span>
-                  {navUpper[2].label}
+                  {navUpper[1].label}
                 </Link>
               </div>
               <div className="w-[1px] h-10 bg-white"></div>
@@ -152,7 +154,6 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
 
 export const TemperatureIcon = () => (
   <svg

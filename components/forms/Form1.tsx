@@ -206,12 +206,16 @@ const Form1: React.FC<formProps> = ({
   return (
     <form
       onSubmit={handleFormSubmit}
-      className={`grid ${!gridView ? "md:grid-cols-10" : "gap-2 bg-transparent"} grid-cols-2 max-md:gap-2  divide-x divide-[#E0E0E0]`}
+      className={`grid ${
+        !gridView ? "md:grid-cols-10" : "gap-2 bg-transparent"
+      } grid-cols-2 max-md:gap-2  divide-x divide-[#E0E0E0] barlow uppercase`}
       ref={formRef}
     >
       {/* Full Name Field */}
       <div
-        className={`col-span-2 h-full flex flex-col px-4 ${rounded && "lg:rounded-l-2xl"} bg-[#fff]  `}
+        className={`col-span-2 h-full flex flex-col px-4 ${
+          rounded && "lg:rounded-l-2xl"
+        } bg-[#fff]  `}
       >
         <label
           htmlFor="fullName"
@@ -237,9 +241,7 @@ const Form1: React.FC<formProps> = ({
       </div>
 
       {/* Phone Number Field */}
-      <div
-        className={`col-span-2 w-full flex flex-col px-4 bg-[#fff]`}
-      >
+      <div className={`col-span-2 w-full flex flex-col px-4 bg-[#fff]`}>
         <label
           htmlFor="PhoneNumber"
           className="text-sm max-md:py-3 text-[#343434]"
@@ -286,13 +288,8 @@ const Form1: React.FC<formProps> = ({
       </div>
 
       {/* Email Field */}
-      <div
-        className={`col-span-2 h-full px-4 flex flex-col bg-[#fff]`}
-      >
-        <label
-          htmlFor="EmailId"
-          className="text-sm max-md:py-3 text-[#343434]"
-        >
+      <div className={`col-span-2 h-full px-4 flex flex-col bg-[#fff]`}>
+        <label htmlFor="EmailId" className="text-sm max-md:py-3 text-[#343434]">
           Email Id*
         </label>
         <input
@@ -312,13 +309,8 @@ const Form1: React.FC<formProps> = ({
       </div>
 
       {/* Date Picker Field */}
-      <div
-        className={`col-span-2 flex flex-col px-4 bg-[#fff] relative`}
-      >
-        <label
-          htmlFor="checkIn"
-          className="text-sm max-md:py-3 text-[#343434]"
-        >
+      <div className={`col-span-2 flex flex-col px-4 bg-[#fff] relative`}>
+        <label htmlFor="checkIn" className="text-sm max-md:py-3 text-[#343434]">
           Check In & Check Out*
         </label>
         <DatePicker
@@ -345,12 +337,14 @@ const Form1: React.FC<formProps> = ({
 
       {/* Submit Button */}
       <div
-        className={`h-full col-span-2 max-md:col-span-2 md:px-2 ${rounded && "lg:rounded-r-2xl overflow-hidden"} ${gridView && "col-span-2"} flex items-center bg-[#fff]`}
+        className={`h-full col-span-2 max-md:col-span-2 md:px-2 ${
+          rounded && "lg:rounded-r-2xl overflow-hidden"
+        } ${gridView && "col-span-2"} flex items-center bg-[#fff]`}
       >
         <button
           type="submit"
           aria-label="Book Now"
-          className="text-center bg-secondary py-4 w-full h-full text-white md:rounded-full hover:bg-primary duration-300 transition-all ease-in-out uppercase"
+          className="text-center bg-primary py-4 w-full h-full text-white md:rounded-full hover:bg-primary duration-300 transition-all ease-in-out uppercase"
           disabled={isSubmitting}
         >
           {isSubmitting ? (

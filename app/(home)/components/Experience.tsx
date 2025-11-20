@@ -1,6 +1,7 @@
 "use client";
 import LinkButton from "@/components/buttons/LinkButton";
 import { Container, Section } from "@/components/sectionComponants";
+import OfferSlider from "@/components/sliders/OfferSlider";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import Image from "next/image";
 import React from "react";
@@ -16,6 +17,10 @@ type ExperienceProps = {
   };
   images: { title: string; src: string }[];
 };
+
+const SliderText = [
+  `BOOK DIRECTLY WITH US AND ENJOY COMPLIMENTARY BREAKFAST AND UP TO 50% OFF ON FOOD.`,
+];
 const Experience = ({
   title,
   description,
@@ -23,7 +28,7 @@ const Experience = ({
   button,
 }: ExperienceProps) => {
   return (
-    <Section className="bg-primary relative">
+    <Section className="bg-primary relative md:pb-40!">
       <Container>
         <div className="lg:grid grid-cols-12 gap-4">
           <div className="lg:col-span-9 experience-card">
@@ -51,7 +56,7 @@ const Experience = ({
                       className="object-cover"
                     />
 
-                    <span className="absolute w-full bottom-0 flex justify-center bg-black/40 text-white barlow font-medium md:text-2xl text-lg">
+                    <span className="absolute w-full bottom-0 flex justify-center bg-black/40 text-white barlow font-medium md:text-2xl text-lg uppercase">
                       {item.title}
                     </span>
                   </div>
@@ -74,12 +79,34 @@ const Experience = ({
         </div>
       </Container>
 
-      <div className="bg-black absolute bottom-0 w-full py-4 text-white overflow-hidden flex">
-        <div className="marquee">
-          BOOK DIRECTLY WITH US AND ENJOY COMPLIMENTARY BREAKFAST AND UP TO 50%
-          OFF ON FOOD.
-        </div>
+      <div className="absolute bottom-0 w-full text-white overflow-hidden flex">
+        <OfferSlider
+          offersTitle={SliderText}
+          direction="ltr"
+          wrapperClass="demo"
+        />
       </div>
+
+      <div
+        className="absolute left-0 bottom-14 w-[35%] h-16 bg-no-repeat bg-contain md:block hidden"
+        style={{
+          backgroundImage: `url('/images/Mountains.png')`,
+        }}
+      />
+
+      <div
+        className="absolute right-0 bottom-14 w-8 h-20 bg-contain bg-no-repeat md:block hidden"
+        style={{
+          backgroundImage: `url('/images/Leaf2.png')`,
+        }}
+      />
+
+      <div
+        className="absolute left-0 -top-5 w-32 h-32 bg-contain bg-no-repeat"
+        style={{
+          backgroundImage: `url('/images/Flame.png')`,
+        }}
+      />
     </Section>
   );
 };

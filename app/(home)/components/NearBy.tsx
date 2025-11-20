@@ -24,7 +24,7 @@ type NearByProps = {
 
 const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
   return (
-    <Section className="bg-primary">
+    <Section className="bg-primary relative">
       <Container className="space-y-6">
         <div className="max-w-xl mx-auto text-white">
           <h2 className="text-center md:text-xl">{title}</h2>
@@ -69,6 +69,27 @@ const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
           <LinkButton href={button.href} label={button.label} />
         </div>
       </Container>
+
+      <div
+        className="absolute left-0 bottom-0 w-[35%] h-16 bg-no-repeat bg-contain md:block hidden"
+        style={{
+          backgroundImage: `url('/images/Mountains.png')`,
+        }}
+      />
+
+      <div
+        className="absolute right-0 md:bottom-1 bottom-0 w-20 h-20 bg-contain bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/images/Tree.png')`,
+        }}
+      />
+
+      <div
+        className="absolute left-0 -top-5 w-32 h-32 bg-contain bg-no-repeat"
+        style={{
+          backgroundImage: `url('/images/Flame.png')`,
+        }}
+      />
     </Section>
   );
 };
