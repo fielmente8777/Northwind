@@ -51,7 +51,7 @@ const Experience = ({
                       className="object-cover"
                     />
 
-                    <span className="absolute w-full bottom-0 flex justify-center bg-black/40 text-white">
+                    <span className="absolute w-full bottom-0 flex justify-center bg-black/40 text-white barlow font-medium md:text-2xl text-lg">
                       {item.title}
                     </span>
                   </div>
@@ -61,8 +61,10 @@ const Experience = ({
           </div>
 
           <div className="lg:col-span-3 space-y-4">
-            <h2 className="text-white md:text-5xl font-normal">{title}</h2>
-            <p className="text-dark">{description}</p>
+            <h2 className="text-white md:text-5xl text-3xl font-normal gilda">
+              {title}
+            </h2>
+            <p className="text-dark barlow">{description}</p>
             <LinkButton
               href={button.href}
               label={button.label}
@@ -72,7 +74,7 @@ const Experience = ({
         </div>
       </Container>
 
-      <div className="bg-black absolute bottom-0 w-full py-4 text-white overflow-hidden flex ">
+      <div className="bg-black absolute bottom-0 w-full py-4 text-white overflow-hidden flex">
         <div className="marquee">
           BOOK DIRECTLY WITH US AND ENJOY COMPLIMENTARY BREAKFAST AND UP TO 50%
           OFF ON FOOD.

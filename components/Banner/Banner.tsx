@@ -49,11 +49,11 @@ const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
       </div>
 
       <div className="md:absolute top-1/2 left-26 -translate-y-1/2 md:max-w-[609px] w-full text-white space-y-2 md:px-0 px-4">
-        <h2 className="md:text-2xl flex items-center gap-4">
+        <h2 className="md:text-2xl flex items-center gap-4 barlow">
           {title}
           <span className="w-26 h-0.5 bg-primary inline-blocks"></span>
         </h2>
-        <h3 className="md:text-6xl text-4xl bg-linear-to-r from-white to-primary bg-clip-text text-transparent font-semibold">
+        <h3 className="md:text-6xl text-4xl bg-linear-to-r from-white to-primary/60 bg-clip-text text-transparent font-bold barlow">
           {subTitle}
         </h3>
       </div>

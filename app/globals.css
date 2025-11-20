@@ -19,9 +19,19 @@
   --color-extra-light: #9C9C9C;
   --color-border-clr: #C8C8C8;
   --color-bg1: #FFFBED;
+  --color-ternary:#06584E
 }
 
-.marquee {
+.barlow{
+ font-family: var(--font-barlow), sans-serif;
+} 
+
+.gilda{
+ font-family: var(--font-gilda), sans-serif;
+}
+
+
+.marquee { 
   white-space: nowrap;
   display: inline-block;
   animation: scroll-left 12s linear infinite;
@@ -35,3 +45,4 @@
     transform: translateX(-100%);
   }
 } 
+

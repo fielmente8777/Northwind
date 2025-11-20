@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import LinkButton from "../buttons/LinkButton";
 import { contact } from "@/utils/constent";
 import { Container } from "../sectionComponants";
+import { subscribe } from "diagnostics_channel";
 
 const Footer = () => {
   const pathName = usePathname();
@@ -20,7 +21,7 @@ const Footer = () => {
       <Container>
         <div className="grid md:py-12 py-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4">
           <div className="md:max-w-[300px] flex flex-col gap-4 items-center">
-            <div className="w-[100px] relative md:w-[280px] aspect-4/1">
+            <div className="w-[300px] relative md:w-[280px] aspect-4/1">
               <Image
                 src={data.logo}
                 alt="logo"
@@ -36,12 +37,17 @@ const Footer = () => {
               className={`${index === 1 ? "lg:w-fit lg:ml-auto" : ""}`}
               key={index}
             >
-              <h2 className="md:text-[2rem] text-white font-aboreto  text-xl mb-4">
+              <h2 className="md:text-[2rem]  text-white font-aboreto  text-2xl mb-4 gilda">
                 {list.title}
               </h2>
               <ul className={`flex flex-col gap-4`}>
                 {list.links.map((item, suIndex) => (
-                  <li className="flex gap-2 flex-wrap" key={suIndex}>
+                  <li
+                    className={`flex gap-2 flex-wrap ${
+                      suIndex === 2 && "gilda"
+                    }`}
+                    key={suIndex}
+                  >
                     <span
                       className={`mt-1 ${
                         index === 1
@@ -79,7 +85,9 @@ const Footer = () => {
                         {item.label}
                       </span>
                     </Link>
-                    {item.label2 && <span className="text-white -ml-1">,</span>}
+                    {item.label2 && (
+                      <span className="text-white -ml-1 gilda">,</span>
+                    )}
                     {item.label2 && item.href2 && (
                       <Link
                         target="_blank"

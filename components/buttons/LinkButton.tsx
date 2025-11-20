@@ -19,7 +19,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`flex items-center justify-center uppercase gap-2 w-fit px-10 py-3 bg-black text-white bor font-semibold hover:scale-95 transition-all duration-300 ease-in-out hover:shadow-lg rounded-full ${className}`}
+      className={`flex items-center justify-center uppercase gap-2 w-fit px-10 py-3 bg-black text-white barlow font-semibold hover:scale-95 transition-all duration-300 ease-in-out hover:shadow-lg rounded-full ${className}`}
       {...props}
     >
       {label}

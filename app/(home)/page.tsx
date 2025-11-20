@@ -28,6 +28,14 @@ export default function Home() {
       <ContactUs {...pageData?.contactUsData} />
       <NearBy {...pageData?.nearByData} />
       <Testimonial {...pageData?.testimonial} />
+
+      <div className="md:top-5 md:relative z-30 max-md:py-[16px] max-md:my-8 max-md:bg-dark2 md:block hidden">
+        <Container className="p-3! bg-light md:rounded-2xl">
+          <div className="md:rounded-2xl  md:shadow-xl md:py-5 bg-white">
+            <Form1 rounded />
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }

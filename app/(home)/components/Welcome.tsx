@@ -34,18 +34,20 @@ const Welcome = ({
     <Section className="p-0!">
       <div className="relative w-full">
         <div
-          className="absolute left-0 top-0 w-[30%] h-full bg-contain bg-center"
+          className="absolute left-0 top-0 w-[35%] h-full bg-cover bg-center"
           style={{
             backgroundImage: `url('/images/Mountains.png')`,
           }}
         />
-        <div className="flex flex-col gap-1.5 items-center">
+        <div className="flex flex-col gap-1.5 items-center barlow">
           <span>{location.label}</span>
-          <h2 className="text-center md:text-2xl text-primary">{title}</h2>
+          <h2 className="text-center md:text-2xl text-primary font-medium">
+            {title}
+          </h2>
         </div>
 
         <div
-          className="absolute right-0 top-0 w-[30%] h-full bg-contain bg-center"
+          className="absolute right-0 top-0 w-[35%] h-full bg-cover bg-center"
           style={{
             backgroundImage: `url('/images/Mountains.png')`,
           }}
@@ -58,14 +60,16 @@ const Welcome = ({
             <Image
               src={image.src}
               alt={image.alt}
-              className="object-cover"
+              className="object-contain"
               fill
             />
           </div>
 
           <div className="md:col-span-8 space-y-5">
-            <h1 className="text-3xl font-bold text-dark">{subTitle}</h1>
-            <p className="text-dark">{description}</p>
+            <h1 className="md:text-5xl text-3xl font-bold text-dark gilda">
+              {subTitle}
+            </h1>
+            <p className="text-dark barlow md:text-lg">{description}</p>
 
             <LinkButton
               href={link.href}

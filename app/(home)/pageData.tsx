@@ -52,7 +52,10 @@ export const pageData = {
           label: "Book Now",
           href: `tel:${contact.phone[0]}`,
         },
-        images: ["/images/rooms/Premium-room1.jpg"],
+        images: [
+          "/images/rooms/Premium-room1.jpg",
+          "/images/rooms/Premium-room1.jpg",
+        ],
       },
 
       {
@@ -85,13 +88,29 @@ export const pageData = {
     },
 
     images: [
+      // {
+      //   title: "PARAGLIDING",
+      //   src: "/images/experienceImage1.jpg",
+      // },
+      // {
+      //   title: "track",
+      //   src: "/images/experienceImage2.jpg",
+      // },
       {
-        title: "PARAGLIDING",
-        src: "/images/experienceImage1.jpg",
+        title: "Trekking",
+        src: "/images/experienceImage3.jpg",
       },
       {
         title: "PARAGLIDING",
-        src: "/images/experienceImage2.jpg",
+        src: "/images/experienceImage4.jpg",
+      },
+      {
+        title: "Bird Watching",
+        src: "/images/experienceImage5.jpg",
+      },
+      {
+        title: "Star Gazing",
+        src: "/images/experienceImage6.jpg",
       },
     ],
   },
@@ -110,13 +129,13 @@ export const pageData = {
 
         src: "/images/makemytrip-logo.png",
         partnerName: "Booking.com",
-        ratings: "9.5/10",
+        ratings: "9.7/10",
       },
       {
         icon: <BookingRatingIcon />,
         src: "/images/Booking.Com-logo.png",
         partnerName: "Hotels.com",
-        ratings: "9.7/10",
+        ratings: "9.5/10",
       },
       {
         icon: <ExpediaRatingIcon />,

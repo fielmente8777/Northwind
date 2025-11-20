@@ -27,13 +27,15 @@ const Rooms = ({ title, subTitle, items }: RoomsProps) => {
   return (
     <Section className="bg-bg1 space-y-8">
       <div>
-        <h2 className="text-center text-primary text-2xl">{title}</h2>
-        <h3 className="text-center md:text-5xl text-3xl text-dark">
+        <h2 className="text-center text-primary text-2xl barlow font-medium">
+          {title}
+        </h2>
+        <h3 className="text-center md:text-5xl text-3xl text-dark gilda">
           {subTitle}
         </h3>
       </div>
 
-      <Container className="lg:flex flex-col gap-10 hidden">
+      <Container className="lg:flex flex-col gap-36 hidden">
         {items.map((item, index) => (
           <div key={index} className={`relative w-full aspect-[16/7.5]`}>
             <div
@@ -64,20 +66,24 @@ const Rooms = ({ title, subTitle, items }: RoomsProps) => {
             </div>
 
             <div
-              className={`bg-primary absolute right-0 top-0 lg:w-[45%] w-full h-full z-40 ${
+              className={`bg-primary absolute right-0 top-0 lg:w-[45%]  p-1 w-full h-full z-40 ${
                 index % 2 === 0 ? "right-0" : "left-0"
               }`}
             >
               <div
-                className={`flex justify-end ${
+                className={`h-full flex justify-end border-2 border-white ${
                   index % 2 === 0 ? "justify-end" : "justify-start"
                 }`}
               >
                 <div className="max-w-80 p-4 space-y-3">
-                  <h2 className="text-white md:text-2xl">{item.title}</h2>
-                  <h3 className="md:text-3xl text-dark">{item.subTitle}</h3>
-                  <p className="text-dark">{item.description}</p>
-                  <p className="text-white md:text-xl">{item.price}</p>
+                  <h2 className="text-white md:text-2xl barlow font-medium">
+                    {item.title}
+                  </h2>
+                  <h3 className="md:text-4xl text-3xl text-dark gilda">
+                    {item.subTitle}
+                  </h3>
+                  <p className="text-dark barlow">{item.description}</p>
+                  <p className="text-white md:text-xl barlow">{item.price}</p>
                   <div>
                     <LinkButton
                       href={item.link.href}
@@ -91,7 +97,7 @@ const Rooms = ({ title, subTitle, items }: RoomsProps) => {
 
             <div
               className={`lg:block hidden absolute -top-5 w-[35%] h-10 bg-cover bg-center ${
-                index % 2 === 0 ? "left-0" : "right-0"
+                index % 2 === 0 ? "left-7" : "right-7"
               }`}
               style={{
                 backgroundImage: `url('/images/Mountains.png')`,
@@ -128,8 +134,10 @@ const Rooms = ({ title, subTitle, items }: RoomsProps) => {
 
             <div className="bg-primary">
               <div className="p-4 space-y-3">
-                <h2 className="text-white md:text-2xl">{item.title}</h2>
-                <h3 className="md:text-3xl text-dark">{item.subTitle}</h3>
+                <h2 className="text-white md:text-2xl barlow">{item.title}</h2>
+                <h3 className="md:text-3xl text-2xl text-dark gilda">
+                  {item.subTitle}
+                </h3>
                 <p className="text-dark">{item.description}</p>
                 <p className="text-white md:text-xl">{item.price}</p>
                 <div>
