@@ -23,14 +23,14 @@ const Experience = ({
   button,
 }: ExperienceProps) => {
   return (
-    <Section className="bg-white relative md:pb-40!">
+      <Section className="bg-[#F5F0E0] box-shadow relative md:pb-40!">
       <Container>
-        <div className="flex justify-end">
-          <div className="flex flex-col items-end max-w-96 w-full">
+        <div className="flex justify-end ">
+          <div className="flex flex-col gap-6 items-end max-w-[40rem] w-full">
             <h2 className="text-secondary md:text-end text-center md:text-5xl text-3xl font-normal gilda">
               {title}
             </h2>
-            <p className="text-dark barlow md:text-end text-center">{description}</p>
+            <p className="text-dark barlow md:text-end text-center max-w-[35.9rem] w-full">{description}</p>
           </div>
         </div>
         {/* desktop view */}
@@ -38,7 +38,7 @@ const Experience = ({
           {images.map((card, index) => (
             <div
               key={index}
-              className={`relative w-full aspect-4/5 ${
+              className={`relative w-full aspect-4/5 group overflow-hidden ${
                 index == 1 && `mt-16`
               } ${index == 2 && `mt-32`}`}
             >
@@ -46,7 +46,7 @@ const Experience = ({
                 src={card.src}
                 alt={card.title}
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
               />
 
               <div className="absolute bottom-0 bg-white/10 backdrop-blur-sm w-full flex justify-center py-2">

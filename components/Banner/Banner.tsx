@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import { contact } from "@/utils/constent";
 import LinkButton from "../buttons/LinkButton";
+import { navUpper } from "../navbar/navData";
 
 interface BannerProps {
   src: string;
@@ -18,7 +19,7 @@ interface BannerProps {
 const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
   return (
     <Section defaultPadding={false} className="p-3">
-      <div className="relative w-full md:aspect-16/9 aspect-square after:absolute after:inset-3 after:border after:border-white after:z-10">
+      <div className="relative w-full md:aspect-16/9 aspect-[4/5.5] ">
         {videoSrc ? (
           <LazyLoadedVideo
             src={videoSrc}
@@ -39,39 +40,46 @@ const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
           />
         )}
 
-        <div className="absolute md:w-fit w-full z-20 top-8 left-1/2 transform -translate-x-1/2 flex justify-between items-center px-5 md:bg-transparent bg-primary">
-          <div className="relative lg:w-[300px] w-[200px] aspect-4/1">
+        <div className="absolute w-fit z-20 md:top-20 top-15 left-1/2 transform -translate-x-1/2">
+          <div className="relative lg:w-100 w-60 aspect-[4/.74]">
             <Image
               src={"/images/Northwind-logo.png"}
               alt="logo"
               fill
-              className="object-contain"
+              className="object-cover"
             />
           </div>
 
-          <Link
+          {/* <Link
             href={`tel:${contact.phone[0]}`}
             target="_blank"
             className="text-white text-4xl md:hidden block"
           >
             <FaPhoneAlt size={22} />
-          </Link>
+          </Link> */}
         </div>
 
-        <div className="absolute z-50 top-26 left-1/2 transform -translate-x-1/2 md:max-w-3xl text-center w-full text-white space-y-2 md:px-0 px-4">
+        <div className="absolute z-50 md:top-60 top-35 left-1/2 transform -translate-x-1/2 md:max-w-[47.5rem] text-center w-full text-white space-y-2 md:px-0 px-4">
           {/* <h2 className="md:text-2xl gap-4 barlow">
             {title} */}
           {/* <span className="w-26 h-0.5 bg-primary inline-blocks"></span> */}
           {/* </h2> */}
-          <h1 className="md:text-6xl/[4.5rem] text-4xl text-white font-mont ">
+          <h1 className="md:text-5xl/[4rem] text-xl text-white font-mont">
             {subTitle}
           </h1>
+          <Link
+            href="{navUpper[0].href}"
+            className="flex items-center justify-center gap-2 mt-4 md:text-xl"
+          >
+            <span className="">{navUpper[0].icon}</span>
+            {navUpper[0].label}
+          </Link>
         </div>
         <div className="absolute z-50 bottom-8 left-1/2 transform -translate-x-1/2 w-fit">
           <LinkButton
             href="/contact"
             label="Book Now"
-            className="md:text-xl bg-white/10 backdrop-blur-sm text-white border-white border rounded-none mx-auto mt-4"
+            className="md:text-xl text-nowrap bg-white/10 backdrop-blur-sm text-white border-white border rounded-none mx-auto mt-4"
           />
         </div>
 
@@ -84,7 +92,7 @@ const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
             ))}
           </div>
         </div> */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/30" />
+        {/* <div className="absolute top-0 left-0 w-full h-full bg-black/30" /> */}
       </div>
     </Section>
   );

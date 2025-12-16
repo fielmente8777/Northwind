@@ -3,7 +3,7 @@ import { CallIcon, FillLocationIcon, FillMailIcon } from "@/utils/icons";
 
 export const navUpper = [
   {
-    label: "Mussoorie, Uttarakhand",
+    label: "Bir, Himachal Pradesh",
     href: contact.addressLink,
     icon: <FillLocationIcon />,
   },

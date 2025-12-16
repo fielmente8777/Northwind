@@ -9,7 +9,7 @@ type TestimonialProps = {
   title?: string;
   subTitle: string;
   description?: string;
-  images: string;
+  images: string[];
   testimonials: { title: string; description: string }[];
   link: {
     label: string;
@@ -19,11 +19,8 @@ type TestimonialProps = {
 };
 
 const Testimonial: React.FC<TestimonialProps> = ({
-  title,
   subTitle,
-  description,
   images,
-  link,
   testimonials,
   orderChange,
 }) => {
@@ -38,44 +35,53 @@ const Testimonial: React.FC<TestimonialProps> = ({
   // ];
 
   return (
-    <Section defaultPadding={false} >
-      <div className="grid lg:grid-cols-6 grid-cols-1 max-md:gap-6 items-center">
+    <Section defaultPadding={false}>
+      <div className="grid lg:grid-cols-6 grid-cols-1  items-center">
         <div
           className={`md:col-span-4 ${
             orderChange ? "order-last" : "order-first"
           }`}
         >
-          {/* <div className="grid md:grid-cols-3 grid-cols-2 gap-4 grid-flow-row auto-rows-[70px]"> */}
-          <div className={`relative w-full aspect-square md:aspect-[4/3] overflow-hidden`}>
-            <Image
-              src={images}
-              alt={images}
-              fill
-              sizes="100%"
-              className="object-cover"
-            />
-          </div>
-          {/* </div> */}
+          <SwiperCarousel
+            data={images}
+            autoplay={{ delay: 5000 }}
+            modules={[Autoplay]}
+            loop={true}
+            speed={1000}
+            renderSlide={(image) => (
+              <div
+                className={`relative w-full aspect-[4/2.5] md:aspect-[4/2.4] overflow-hidden`}
+              >
+                <Image
+                  src={image}
+                  alt={image}
+                  fill
+                  sizes="100%"
+                  className="object-cover"
+                />
+              </div>
+            )}
+          />
         </div>
         <div
           className={`md:col-span-2 ${
             orderChange ? "order-first" : "order-last"
           }`}
         >
-          <div className="flex flex-col gap-8 md:px-8">
+          <div className="flex flex-col gap-8 md:px-8 p-4">
             <div className="flex items-center gap-3">
               <div className="">
                 {/* <p className="text-dark text-xl font-medium">{title}</p> */}
                 <SectionHeading
                   title={subTitle}
                   titleColor="primary"
-                  titleClassName="text-4xl!"
+                  titleClassName="text-3xl!"
                 />
               </div>
             </div>
             {/* <p className="md:text-lg text-light">{description}</p> */}
 
-            <div>
+            <div className="">
               <SwiperCarousel
                 data={testimonials}
                 autoplay={{ delay: 12000 }}

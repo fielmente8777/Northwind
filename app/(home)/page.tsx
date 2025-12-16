@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div>
       <Banner {...pageData?.bannerData} />
-      <Section defaultPadding={false} className="py-6">
+      <Section defaultPadding={false} className="pt-16 pb-0">
         <div className="relative w-full aspect-[4/.4]">
           <Image
             src={"/line.png"}
@@ -29,8 +29,8 @@ export default function Home() {
         className="md:top-14 md:relative z-30 max-md:py-4
        max-md:my-8 max-md:bg-dark2"
       >
-        <Container className="p-3! bg-white">
-          <div className="box-shadow md:py-5 bg-white">
+        <Container className="p-3! bg-white box-shadow-2">
+          <div className="box-shadow-2 md:py-5 bg-white">
             <Form1 rounded />
           </div>
         </Container>

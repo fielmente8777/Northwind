@@ -24,10 +24,10 @@ type NearByProps = {
 
 const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
   return (
-    <Section className="bg-[#212121] relative ">
+    <Section defaultPadding={false} className="relative pt-16">
       <div className="space-y-6 md:space-y-16">
         <Container className="">
-          <div className="max-w-xl mx-auto text-white space-y-2">
+          <div className="max-w-xl mx-auto text-secondary space-y-2">
             <h2 className="text-center md:text-xl">{title}</h2>
             <h3 className="text-center md:text-4xl text-3xl gilda">
               {subTitle}
@@ -51,12 +51,12 @@ const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
             renderSlide={(item) => {
               return (
                 <div className=" w-full">
-                  <div className="relative w-full aspect-[4/5.5]">
+                  <div className="relative w-full aspect-[4/5.5] overflow-hidden group">
                     <Image
                       src={item.src}
                       alt="nearby-images"
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="bg-black/50 py-3 flex justify-center text-white text-xl z-10 absolute bottom-0 w-full">
                       <span>{item.title}</span>
@@ -68,14 +68,14 @@ const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
           />
         </div>
 
-        <LinkButton
+        {/* <LinkButton
           href={button.href}
           label={button.label}
           className="mx-auto bg-white rounded-none"
-        />
+        /> */}
       </div>
 
-      <div
+      {/* <div
         className="absolute left-0 bottom-0 w-[35%] h-16 bg-no-repeat bg-contain md:block hidden"
         style={{
           backgroundImage: `url('/images/Mountains.png')`,
@@ -94,7 +94,7 @@ const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
         style={{
           backgroundImage: `url('/images/Flame.png')`,
         }}
-      />
+      /> */}
     </Section>
   );
 };

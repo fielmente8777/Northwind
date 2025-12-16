@@ -209,7 +209,7 @@ const Form1: React.FC<formProps> = ({
       onSubmit={handleFormSubmit}
       className={`grid ${
         !gridView ? "md:grid-cols-10" : "gap-2 bg-transparent"
-      } grid-cols-2 max-md:gap-2  md:divide-x max-md:divide-y divide-[#E0E0E0]`}
+      } grid-cols-2 max-md:gap-2  md:divide-x max-md:divide-y divide-[#E0E0E0] barlow`}
       ref={formRef}
     >
       {/* Full Name Field */}
@@ -295,9 +295,7 @@ const Form1: React.FC<formProps> = ({
       </div>
 
       {/* Email Field */}
-      <div
-        className={`col-span-2 relative h-full px-4 flex flex-col bg-white`}
-      >
+      <div className={`col-span-2 relative h-full px-4 flex flex-col bg-white`}>
         <label
           htmlFor="EmailId"
           className="text-sm max-md:py-3 text-dark uppercase"

@@ -21,7 +21,11 @@
   --color-bg1: #FFFBED;
   --color-ternary:#06584E
 }
-
+body {
+ 
+  font-family: var(--font-barlow), sans-serif;
+  
+}
 .barlow{
  font-family: var(--font-barlow), sans-serif;
 } 

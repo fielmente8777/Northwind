@@ -29,7 +29,7 @@ const Welcome = ({
   image,
 }: WelcomeProps) => {
   return (
-    <Section className="p-0!">
+    <Section defaultPadding={false} className="">
       {/* <div className="relative w-full">
         <div
           className="absolute left-0 md:top-0 w-[35%] h-full bg-cover bg-center md:block hidden"
@@ -53,8 +53,8 @@ const Welcome = ({
         />
       </div> */}
 
-      <Section className="bg-[#F5F0E0]">
-        <div className="grid md:grid-cols-[1.8fr_1fr] gap-3 items-center max-w-350 mr-auto">
+      <Section className="bg-[#F5F0E0] pt-26">
+        <div className="grid md:grid-cols-[1.8fr_1fr] gap-4 md:gap-8 items-center max-w-350 mr-auto">
           <div className="relative w-full aspect-square md:aspect-[4/2.5] after:absolute after:inset-3 after:border after:border-white after:z-10">
             <Image
               src={image.src}
@@ -64,11 +64,11 @@ const Welcome = ({
             />
           </div>
 
-          <div className="space-y-5 w-full">
-            <h2 className="md:text-5xl text-3xl font-bold text-center text-dark gilda">
+          <div className="space-y-5 md:space-y-8 w-full">
+            <h2 className="md:text-5xl/[3.5rem] text-3xl font-bold text-center text-dark gilda">
               {subTitle}
             </h2>
-            <p className="text-dark barlow md:text-lg text-center">{description}</p>
+            <p className="text-dark barlow md:text-lg text-center">{description}.</p>
 
             <LinkButton
               href={link.href}

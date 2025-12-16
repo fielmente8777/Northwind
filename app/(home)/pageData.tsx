@@ -10,7 +10,7 @@ import { AirPortIcon, BusIcon, TrainIcon } from "@/utils/icons";
 export const pageData = {
   bannerData: {
     title: "NORTHWIND 57",
-    subTitle: "ADVENTURE WRAPPED IN LUXURY AND COMFORT",
+    subTitle: "ADVENTURE WRAPPED IN LUXURY & COMFORT",
     description:
       "Crafted with authenticity, Northern Nawab brings the timeless flavors of Awadh, Delhi, and Punjab to life.",
     src: "/bnr-img.png",
@@ -245,7 +245,11 @@ export const pageData = {
           "North Wind 57 in Bir Billing is a gem for nature lovers and adventure seekers alike. The geodesic dome rooms provide a unique, cozy experience with breathtaking mountain views. Shilank’s warm hospitality makes the stay feel even more special, always attentive to guests’ needs. The on-site restaurant and small lawn area add to the peaceful charm, making it an ideal spot near the paragliding action.",
       },
     ],
-    images: "/images/testimonial3.jpg",
+    images: [
+      // "/images/testimonial3.jpg"
+      "/IMG_4589.png",
+      "/IMG_4591.png",
+    ],
 
     link: { label: "BOOK NOW", url: `tel:${contact.phone[0]}` },
   },

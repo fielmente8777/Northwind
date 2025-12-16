@@ -53,7 +53,7 @@ export default function RootLayout({
       <body
         className={`${barlow.variable} ${gildaDisplay.variable} ${montserrat.variable} antialiased`}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>
