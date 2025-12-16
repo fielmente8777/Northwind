@@ -25,142 +25,79 @@ type RoomsProps = {
 
 const Rooms = ({ title, subTitle, items }: RoomsProps) => {
   return (
-    <Section className="bg-bg1 space-y-8">
+    <Section className="bg-[#212121] space-y-8">
       <div>
         <h2 className="text-center text-primary text-2xl barlow font-medium">
           {title}
         </h2>
-        <h3 className="text-center md:text-5xl text-3xl text-dark gilda">
+        <h3 className="text-center md:text-5xl text-3xl text-white gilda">
           {subTitle}
         </h3>
       </div>
 
-      <Container className="lg:flex flex-col gap-36 hidden">
-        {items.map((item, index) => (
-          <div key={index} className={`relative w-full aspect-[16/7.5]`}>
-            <div
-              className={`absolute top-1/2 -translate-y-1/2 lg:w-[75%] w-full h-full  p-5 z-50 ${
-                index % 2 === 0 ? "left-0" : "right-0"
-              }`}
-            >
-              <div className="w-full h-full bg-white p-3">
-                <div className="h-full rooms-card">
-                  <SwiperCarousel
-                    autoplay={{ delay: 6000 }}
-                    data={item.images}
-                    modules={[Autoplay, Navigation]}
-                    navigation
-                    renderSlide={(item) => (
-                      <div className="relative w-full md:aspect-[16/9.6]">
-                        <Image
-                          src={item}
-                          className="object-cover"
-                          fill
-                          alt={"rooms-images"}
-                        />
-                      </div>
-                    )}
+      {items.map((item, index) => (
+        <div
+          key={index}
+          className={`grid md:grid-cols-5 grid-cols-1 gap-4 w-full max-w-[1440px]
+            ${index % 2 === 0 ? "ml-auto" : "mr-auto"}`}
+        >
+          <div
+            className={`rooms-card md:col-span-3 w-full h-full ${
+              index % 2 === 0 ? "md:order-2" : "md:order-1"
+            }`}
+          >
+            <SwiperCarousel
+              autoplay={{ delay: 6000 }}
+              data={item.images}
+              modules={[Autoplay, Navigation]}
+              navigation
+              loop
+              className="relative w-full after:absolute after:inset-3 after:border after:border-white after:z-1"
+              renderSlide={(item) => (
+                <div className="relative w-full md:aspect-[4/2.3] aspect-4/3 ">
+                  <Image
+                    src={item}
+                    className="object-cover"
+                    fill
+                    alt={"rooms-images"}
                   />
                 </div>
-              </div>
-            </div>
+              )}
+            />
+          </div>
 
-            <div
-              className={`bg-primary absolute right-0 top-0 lg:w-[45%]  p-1 w-full h-full z-40 ${
-                index % 2 === 0 ? "right-0" : "left-0"
-              }`}
-            >
-              <div
-                className={`h-full flex justify-end border-2 border-white ${
-                  index % 2 === 0 ? "justify-end" : "justify-start"
-                }`}
-              >
-                <div className="max-w-80 p-4 space-y-3">
-                  <h2 className="text-white md:text-2xl barlow font-medium">
-                    {item.title}
-                  </h2>
-                  <h3 className="md:text-4xl text-3xl text-dark gilda">
-                    {item.subTitle}
-                  </h3>
-                  <p className="text-dark barlow">{item.description}</p>
-                  <p className="text-white md:text-xl barlow">{item.price}</p>
-                  <div>
-                    <LinkButton
-                      href={item.link.href}
-                      label={item.link.label}
-                      className="w-full"
-                    />
-                  </div>
-                </div>
-              </div>
+          <div
+            className={`p-4 md:col-span-2 space-y-3 ${
+              index % 2 === 0 ? "md:order-1" : "md:order-2"
+            }`}
+          >
+            <h2 className="text-white md:text-2xl barlow font-medium">
+              {item.title}
+            </h2>
+            <h3 className="md:text-4xl text-3xl text-white gilda">
+              {item.subTitle}
+            </h3>
+            <p className="text-white barlow">{item.description}</p>
+            <p className="text-white md:text-xl barlow">{item.price}</p>
+            <div>
+              <LinkButton
+                href={item.link.href}
+                label={item.link.label}
+                className="rounded-none bg-white text-secondary "
+              />
             </div>
+          </div>
 
-            <div
+          {/* <div
               className={`lg:block hidden absolute -top-5 w-[35%] h-10 bg-cover bg-center ${
                 index % 2 === 0 ? "left-7" : "right-7"
               }`}
               style={{
                 backgroundImage: `url('/images/Mountains.png')`,
               }}
-            />
-          </div>
-        ))}
-      </Container>
-
-      <Container className="lg:hidden flex flex-col gap-10">
-        {items.map((item, index) => (
-          <div key={index} className={`w-full`}>
-            <div className={` w-full h-full `}>
-              <div className="w-full h-full bg-white">
-                <div className="h-full">
-                  <SwiperCarousel
-                    autoplay={{ delay: 6000 }}
-                    data={item.images}
-                    modules={[Autoplay, Navigation]}
-                    renderSlide={(item) => (
-                      <div className="relative w-full md:aspect-[16/9.6] aspect-16/10">
-                        <Image
-                          src={item}
-                          className="object-cover"
-                          fill
-                          alt={"rooms-images"}
-                        />
-                      </div>
-                    )}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-primary">
-              <div className="p-4 space-y-3">
-                <h2 className="text-white md:text-2xl barlow">{item.title}</h2>
-                <h3 className="md:text-3xl text-2xl text-dark gilda">
-                  {item.subTitle}
-                </h3>
-                <p className="text-dark">{item.description}</p>
-                <p className="text-white md:text-xl">{item.price}</p>
-                <div>
-                  <LinkButton
-                    href={item.link.href}
-                    label={item.link.label}
-                    className="w-full"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* <div
-              className={`lg:block hidden absolute -top-5 w-[35%] h-10 bg-cover bg-center ${
-                index % 2 === 0 ? "left-0" : "right-0"
-              }`}
-              style={{
-                backgroundImage: `url('/images/Mountains.png')`,
-              }}
             /> */}
-          </div>
-        ))}
-      </Container>
+        </div>
+      ))}
     </Section>
   );
 };

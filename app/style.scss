@@ -1,6 +1,8 @@
 @layer utilities {
   a,
-  button {
+  button,
+  select,
+  .clickable {
     cursor: pointer;
   }
   .demo {
@@ -323,5 +325,12 @@ input {
       width: 30px;
       height: 30px;
     }
+  }
+
+  .swiper-button-next {
+    right: 1rem !important;
+  }
+  .swiper-button-prev {
+    left: 1rem !important;
   }
 }

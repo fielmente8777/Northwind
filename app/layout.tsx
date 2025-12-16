@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow, Gilda_Display } from "next/font/google";
+import { Barlow, Gilda_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import "./style.scss";
 import Navbar from "@/components/navbar/Navbar";
@@ -17,6 +17,19 @@ const gildaDisplay = Gilda_Display({
   subsets: ["latin"],
   weight: ["400"],
 });
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+export const metadata: Metadata = {
+  title:
+    "Northwind Hotel - Experience Luxury and Comfort in the Heart of Nature",
+  description:
+    "Northwind Hotel - Experience Luxury and Comfort in the Heart of Nature",
+};
 
 export default function RootLayout({
   children,
@@ -38,7 +51,7 @@ export default function RootLayout({
         strategy="afterInteractive"
       />
       <body
-        className={`${barlow.variable} ${gildaDisplay.variable} antialiased`}
+        className={`${barlow.variable} ${gildaDisplay.variable} ${montserrat.variable} antialiased`}
       >
         <Navbar />
         {children}

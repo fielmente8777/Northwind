@@ -23,16 +23,14 @@ type WelcomeProps = {
 };
 
 const Welcome = ({
-  title,
   subTitle,
   description,
   link,
   image,
-  location,
 }: WelcomeProps) => {
   return (
     <Section className="p-0!">
-      <div className="relative w-full">
+      {/* <div className="relative w-full">
         <div
           className="absolute left-0 md:top-0 w-[35%] h-full bg-cover bg-center md:block hidden"
           style={{
@@ -53,32 +51,32 @@ const Welcome = ({
             backgroundImage: `url('/images/Mountains.png')`,
           }}
         />
-      </div>
+      </div> */}
 
-      <Section className="bg-primary">
-        <Container className="grid md:grid-cols-12 items-center">
-          <div className="md:col-span-4 relative max-w-96 aspect-square">
+      <Section className="bg-[#F5F0E0]">
+        <div className="grid md:grid-cols-[1.8fr_1fr] gap-3 items-center max-w-350 mr-auto">
+          <div className="relative w-full aspect-square md:aspect-[4/2.5] after:absolute after:inset-3 after:border after:border-white after:z-10">
             <Image
               src={image.src}
               alt={image.alt}
-              className="object-contain"
+              className="object-cover"
               fill
             />
           </div>
 
-          <div className="md:col-span-8 space-y-5">
-            <h1 className="md:text-5xl text-3xl font-bold text-dark gilda">
+          <div className="space-y-5 w-full">
+            <h2 className="md:text-5xl text-3xl font-bold text-center text-dark gilda">
               {subTitle}
-            </h1>
-            <p className="text-dark barlow md:text-lg">{description}</p>
+            </h2>
+            <p className="text-dark barlow md:text-lg text-center">{description}</p>
 
             <LinkButton
               href={link.href}
               label={link.label}
-              className="bg-black text-white rounded-full! border-none py-3"
+              className="bg-black text-white mx-auto rounded-none border-none py-3"
             />
           </div>
-        </Container>
+        </div>
       </Section>
     </Section>
   );

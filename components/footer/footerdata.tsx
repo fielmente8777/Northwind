@@ -33,9 +33,8 @@ export const footerData: FooterData = {
       title: "Contact Us",
       links: [
         {
-          title: "Address: ",
           icon: <FillLocationIcon />,
-          label: contact.address,
+          label: "Address: " + contact.address,
           href: contact.addressLink,
         },
         {
@@ -84,9 +83,8 @@ export const footerData2: FooterData = {
       title: "Contact Us",
       links: [
         {
-          title: "Address: ",
           icon: <FillLocationIcon />,
-          label: contact.address,
+          label: "Address: " + contact.address,
           href: contact.addressLink,
         },
         {

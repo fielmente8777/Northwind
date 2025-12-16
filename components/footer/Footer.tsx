@@ -1,13 +1,9 @@
 "use client";
 import Image from "next/image";
-import { footerData, footerData2 } from "./footerdata";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import LinkButton from "../buttons/LinkButton";
-import { contact } from "@/utils/constent";
 import { Container } from "../sectionComponants";
-import { subscribe } from "diagnostics_channel";
-import Form1 from "../forms/Form1";
+import { footerData, footerData2 } from "./footerdata";
 
 const Footer = () => {
   const pathName = usePathname();
@@ -18,11 +14,11 @@ const Footer = () => {
   const data = pathName !== "/" ? footerData : footerData2;
 
   return (
-    <footer className="max_screen_width bg-primary md:pt-20 pt-0 relative">
+    <footer className="max_screen_width bg-primary md:pt-10 pt-0 relative">
       <Container>
-        <div className="grid md:py-12 py-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4">
-          <div className="md:max-w-[300px] flex flex-col gap-4 items-center">
-            <div className="w-[300px] relative md:w-[280px] aspect-4/1">
+        <div className="grid md:py-12 py-8 text-secondary grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4">
+          <div className="md:max-w-75 flex flex-col gap-4 items-center">
+            <div className="w-75 relative md:w-70 aspect-4/1">
               <Image
                 src={data.logo}
                 alt="logo"
@@ -31,20 +27,20 @@ const Footer = () => {
                 className="object-contain "
               />
             </div>
-            <p className="text-white text-center">{data.description}</p>
+            <p className=" text-center">{data.description}</p>
           </div>
           {data.lists.map((list, index) => (
             <div
               className={`${index === 1 ? "lg:w-fit lg:ml-auto" : ""}`}
               key={index}
             >
-              <h2 className="md:text-[2rem]  text-white font-aboreto  text-2xl mb-4 gilda">
+              <h2 className="md:text-[2rem]  font-aboreto  text-2xl mb-4 gilda">
                 {list.title}
               </h2>
               <ul className={`flex flex-col gap-4`}>
                 {list.links.map((item, suIndex) => (
                   <li
-                    className={`flex gap-2 flex-wrap ${
+                    className={`flex gap-2 ${
                       suIndex === 2 && "gilda"
                     }`}
                     key={suIndex}
@@ -52,8 +48,8 @@ const Footer = () => {
                     <span
                       className={`mt-1 ${
                         index === 1
-                          ? "text-primary flex items-center justify-center rounded-sm bg-white w-10 aspect-square"
-                          : "text-white inline-block"
+                          ? "text-white flex items-center justify-center rounded-sm bg-secondary w-10 aspect-square gilda"
+                          : ""
                       }`}
                     >
                       {item.icon}
@@ -63,8 +59,8 @@ const Footer = () => {
                       <span
                         className={`${
                           index === 1
-                            ? "text-white font-aboreto text-2xl my-auto"
-                            : "md:text-lg text-white inline-block"
+                            ? " font-aboreto text-2xl my-auto"
+                            : "md:text-lg  inline-block"
                         }`}
                       >
                         {item.title}
@@ -79,15 +75,15 @@ const Footer = () => {
                       <span
                         className={`${
                           index === 1
-                            ? "text-white font-aboreto text-2xl my-auto"
-                            : "md:text-lg text-white inline-block"
+                            ? " font-aboreto text-2xl my-auto"
+                            : "md:text-lg  inline-block"
                         }`}
                       >
                         {item.label}
                       </span>
                     </Link>
                     {item.label2 && (
-                      <span className="text-white -ml-1 gilda">,</span>
+                      <span className=" -ml-1 gilda">,</span>
                     )}
                     {item.label2 && item.href2 && (
                       <Link
@@ -99,8 +95,8 @@ const Footer = () => {
                         <span
                           className={`${
                             index === 1
-                              ? "text-white font-aboreto text-2xl my-auto"
-                              : "md:text-lg text-white"
+                              ? " font-aboreto text-2xl my-auto"
+                              : "md:text-lg "
                           }`}
                         >
                           {item.label2}
@@ -141,7 +137,7 @@ const Footer = () => {
         </Container>
       </div>
 
-      <div
+      {/* <div
         className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[35%] h-44 bg-no-repeat bg-contain bg-center md:block hidden"
         style={{
           backgroundImage: `url('/images/Mountains.png')`,
@@ -160,7 +156,7 @@ const Footer = () => {
         style={{
           backgroundImage: `url('/images/Leaf.png')`,
         }}
-      />
+      /> */}
     </footer>
   );
 };

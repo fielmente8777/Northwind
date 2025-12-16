@@ -24,12 +24,16 @@ type NearByProps = {
 
 const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
   return (
-    <Section className="bg-primary relative">
-      <Container className="space-y-6">
-        <div className="max-w-xl mx-auto text-white">
-          <h2 className="text-center md:text-xl">{title}</h2>
-          <h3 className="text-center md:text-4xl text-3xl">{subTitle}</h3>
-        </div>
+    <Section className="bg-[#212121] relative ">
+      <div className="space-y-6 md:space-y-16">
+        <Container className="">
+          <div className="max-w-xl mx-auto text-white space-y-2">
+            <h2 className="text-center md:text-xl">{title}</h2>
+            <h3 className="text-center md:text-4xl text-3xl gilda">
+              {subTitle}
+            </h3>
+          </div>
+        </Container>
 
         <div className="nearby-card">
           <SwiperCarousel
@@ -37,27 +41,26 @@ const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
             // loop
             breakpoints={{
               768: {
-                slidesPerView: 3,
+                slidesPerView: 4,
               },
             }}
             speed={800}
-            spaceBetween={15}
+            spaceBetween={0}
             navigation
             modules={[Navigation]}
             renderSlide={(item) => {
               return (
                 <div className=" w-full">
-                  <div className="relative w-full aspect-[4/3.5]">
+                  <div className="relative w-full aspect-[4/5.5]">
                     <Image
                       src={item.src}
                       alt="nearby-images"
                       fill
-                      className="object-cover rounded-t-md"
+                      className="object-cover"
                     />
-                  </div>
-
-                  <div className="bg-white py-3 flex justify-center rounded-b-md">
-                    <span>{item.title}</span>
+                    <div className="bg-black/50 py-3 flex justify-center text-white text-xl z-10 absolute bottom-0 w-full">
+                      <span>{item.title}</span>
+                    </div>
                   </div>
                 </div>
               );
@@ -65,10 +68,12 @@ const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
           />
         </div>
 
-        <div className="flex justify-center">
-          <LinkButton href={button.href} label={button.label} />
-        </div>
-      </Container>
+        <LinkButton
+          href={button.href}
+          label={button.label}
+          className="mx-auto bg-white rounded-none"
+        />
+      </div>
 
       <div
         className="absolute left-0 bottom-0 w-[35%] h-16 bg-no-repeat bg-contain md:block hidden"
@@ -78,7 +83,7 @@ const NearBy = ({ title, subTitle, cards, button }: NearByProps) => {
       />
 
       <div
-        className="absolute right-0 md:bottom-1 bottom-0 w-20 h-20 bg-contain bg-center bg-no-repeat"
+        className="absolute right-0 bottom-0 w-20 h-20 bg-contain bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/images/Tree.png')`,
         }}

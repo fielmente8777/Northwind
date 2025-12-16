@@ -13,7 +13,11 @@ export const pageData = {
     subTitle: "ADVENTURE WRAPPED IN LUXURY AND COMFORT",
     description:
       "Crafted with authenticity, Northern Nawab brings the timeless flavors of Awadh, Delhi, and Punjab to life.",
-    src: "/images/Homebanner.jpg",
+    src: "/bnr-img.png",
+    link: {
+      label: "Book Now",
+      href: `tel:${contact.phone[0]}`,
+    },
   },
 
   welcomeData: {
@@ -31,7 +35,8 @@ export const pageData = {
       href: `tel:${contact.phone[0]}`,
     },
     image: {
-      src: "/images/Adventure.png",
+      src: "/images/testimonial2.jpg",
+      // src: "/images/Adventure.png",
       alt: "Adventure Image",
     },
   },
@@ -86,6 +91,7 @@ export const pageData = {
       label: "Book Now",
       href: `tel:${contact.phone[0]}`,
     },
+    
 
     images: [
       // {
@@ -100,10 +106,10 @@ export const pageData = {
         title: "Trekking",
         src: "/images/experienceImage3.jpg",
       },
-      {
-        title: "PARAGLIDING",
-        src: "/images/experienceImage4.jpg",
-      },
+      // {
+      //   title: "PARAGLIDING",
+      //   src: "/images/experienceImage4.jpg",
+      // },
       {
         title: "Bird Watching",
         src: "/images/experienceImage5.jpg",
@@ -152,21 +158,21 @@ export const pageData = {
 
     cards: [
       {
-        src: "/images/Nearbyimage1.jpg",
-        title: "Lorem Ipsum",
+        src: "/deer-park.png",
+        title: "Deer Park Institute",
       },
       {
-        src: "/images/Nearbyimage2.jpg",
-        title: "Lorem Ipsum",
+        src: "/chokling-monastery.png",
+        title: "Chokling Monastery",
       },
       {
-        src: "/images/Nearbyimage3.jpg",
-        title: "Lorem Ipsum",
+        src: "/baijnath-temple.png",
+        title: "Baijnath Temple",
       },
-      // {
-      //   src: "/images/Nearbyimage1.jpg",
-      //   title: "Lorem Ipsum",
-      // },
+      {
+        src: "/tea-garden.png",
+        title: "Tea Garden",
+      },
     ],
 
     button: {
@@ -200,40 +206,46 @@ export const pageData = {
       href: contact.WhatsappCta,
     },
   },
-
+  SliderText: [
+    `BOOK DIRECTLY WITH US AND ENJOY COMPLIMENTARY BREAKFAST AND UP TO 50% OFF ON FOOD.`,
+  ],
   testimonial: {
     subTitle: "Appreciation From Our Guests",
     testimonials: [
       {
         title: "Lorem Ipsum",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
+          "North Wind 57 in Bir Billing offers a truly one-of-a-kind glamping experience, blending comfort with stunning natural surroundings. The dome rooms are cozy and beautifully designed, perfect for a unique mountain retreat. Shilank’s thoughtful hospitality stands out, ensuring every guest feels right at home. With a lovely restaurant and serene lawn space, it’s an unforgettable escape for both relaxation and adventure.",
       },
       {
         title: "Lorem Ipsum",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
+          "Ideal place to plan your stay during your visit to bir billing - a adventure escape in himachal.Clean rooms, affordable tasty food,hospitality and humble staff is a addition to it. It's a haven for bird watchers and butterfly lovers.We just stayed 1 night and was memorable.",
       },
       {
         title: "Lorem Ipsum",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
+          "North Wind 57 in Bir Billing is straight-up awesome! The geodesic domes are super cool, and the mountain views and sunsets are next level. Close to the paragliding spot too, so it’s perfect if you’re into adventure. The food at their restaurant? Total win. Best glamping spot in Bir Billing for sure!",
       },
       {
         title: "Lorem Ipsum",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
+          "North Wind 57 stands out among the best mountain hotels in Bir for its breathtaking mountain views, cozy ambiance, and excellent service. Located in Bir, Himachal Pradesh, this hotel offers easy access to popular attractions like paragliding in Bir Billing, making it an ideal choice for both nature lovers and adventure enthusiasts. The rooms are comfortable, well-equipped, and provide panoramic vistas, while the on-site restaurant serves delicious local cuisine. If you’re searching for a top-rated hotel in Bir, North Wind 57 is the perfect blend of comfort, scenic beauty, and convenience, making it one of the best Bir Billing hotels for a memorable mountain escape.",
+      },
+      {
+        title: "Lorem Ipsum",
+        description:
+          "The location is just the right perfect, away from the main road but also a 3-4 minute walk leads you to the best eateries. Very quiet. Their common room provides views of scenic sunsets. My wife and I travelled with no itinerary, but Shilank was kind enough to welcome us, and spend time and provide us with cues on spots to visit and eat. All of them were great or exceeded our expectations.",
+      },
+
+      {
+        title: "Lorem Ipsum",
+        description:
+          "North Wind 57 in Bir Billing is a gem for nature lovers and adventure seekers alike. The geodesic dome rooms provide a unique, cozy experience with breathtaking mountain views. Shilank’s warm hospitality makes the stay feel even more special, always attentive to guests’ needs. The on-site restaurant and small lawn area add to the peaceful charm, making it an ideal spot near the paragliding action.",
       },
     ],
-    images: [
-      "/images/testimonial1.jpg",
-      "/images/testimonial2.jpg",
-      "/images/testimonial3.jpg",
-      "/images/testimonial4.jpg",
-      "/images/testimonial5.jpg",
-      "/images/testimonial6.jpg",
-      "/images/testimonial7.jpg",
-    ],
+    images: "/images/testimonial3.jpg",
+
     link: { label: "BOOK NOW", url: `tel:${contact.phone[0]}` },
   },
 };

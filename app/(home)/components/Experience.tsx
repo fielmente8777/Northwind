@@ -1,10 +1,8 @@
 "use client";
 import LinkButton from "@/components/buttons/LinkButton";
 import { Container, Section } from "@/components/sectionComponants";
-import OfferSlider from "@/components/sliders/OfferSlider";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import Image from "next/image";
-import React from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 
 type ExperienceProps = {
@@ -18,9 +16,6 @@ type ExperienceProps = {
   images: { title: string; src: string }[];
 };
 
-const SliderText = [
-  `BOOK DIRECTLY WITH US AND ENJOY COMPLIMENTARY BREAKFAST AND UP TO 50% OFF ON FOOD.`,
-];
 const Experience = ({
   title,
   description,
@@ -28,73 +23,80 @@ const Experience = ({
   button,
 }: ExperienceProps) => {
   return (
-    <Section className="bg-primary relative md:pb-40!">
+    <Section className="bg-white relative md:pb-40!">
       <Container>
-        <div className="lg:grid grid-cols-12 gap-4">
-          <div className="lg:col-span-9 experience-card">
-            <SwiperCarousel
-              // direction={"rtl"}
-              dir="rtl"
-              slidesPerView={1}
-              spaceBetween={20}
-              breakpoints={{
-                768: {
-                  slidesPerView: 1.5,
-                },
-              }}
-              modules={[Navigation, Autoplay]}
-              autoplay={{ delay: 6000 }}
-              navigation
-              data={images}
-              renderSlide={(item) => {
-                return (
-                  <div className="relative w-full aspect-[4/2.2]">
-                    <Image
-                      src={item.src}
-                      alt="images"
-                      fill
-                      className="object-cover"
-                    />
-
-                    <span className="absolute w-full bottom-0 flex justify-center bg-black/40 text-white barlow font-medium md:text-2xl text-lg uppercase">
-                      {item.title}
-                    </span>
-                  </div>
-                );
-              }}
-            />
-          </div>
-
-          <div className="lg:col-span-3 space-y-4">
-            <h2 className="text-white md:text-5xl text-3xl font-normal gilda">
+        <div className="flex justify-end">
+          <div className="flex flex-col items-end max-w-96 w-full">
+            <h2 className="text-secondary md:text-end text-center md:text-5xl text-3xl font-normal gilda">
               {title}
             </h2>
-            <p className="text-dark barlow">{description}</p>
-            <LinkButton
-              href={button.href}
-              label={button.label}
-              className="w-full mb-3"
-            />
+            <p className="text-dark barlow md:text-end text-center">{description}</p>
           </div>
         </div>
+        {/* desktop view */}
+        <div className="lg:grid hidden md:grid-cols-3 gap-5 mt-12">
+          {images.map((card, index) => (
+            <div
+              key={index}
+              className={`relative w-full aspect-4/5 ${
+                index == 1 && `mt-16`
+              } ${index == 2 && `mt-32`}`}
+            >
+              <Image
+                src={card.src}
+                alt={card.title}
+                fill
+                className="object-cover"
+              />
+
+              <div className="absolute bottom-0 bg-white/10 backdrop-blur-sm w-full flex justify-center py-2">
+                <h2 className="gilda text-xl uppercase font-medium text-white" >{card.title}</h2>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* mobile view */}
+        <div className="lg:hidden block mt-12">
+          <SwiperCarousel
+            data={images}
+            className="w-full h-full"
+            modules={[Autoplay]}
+            autoplay={{ delay: 3000 }}
+            loop={true}
+            renderSlide={(card, index) => (
+              <div
+                key={index}
+                className={`relative w-full aspect-[4/4.4]`}
+              >
+                <Image
+                  src={card.src}
+                  alt={card.title}
+                  fill
+                  className="object-cover"
+                />
+
+                <div className="absolute bottom-0 bg-white/60 w-full flex justify-center py-2">
+                  <h2 className="avenir">{card.title}</h2>
+                </div>
+              </div>
+            )}
+          />
+        </div>
+        <LinkButton
+          href={button.href}
+          label={button.label}
+          className="mt-10 mx-auto bg-secondary text-white rounded-none"
+        />
       </Container>
 
-      <div className="absolute bottom-0 w-full text-white overflow-hidden flex">
-        <OfferSlider
-          offersTitle={SliderText}
-          direction="ltr"
-          wrapperClass="demo"
-        />
-      </div>
-
-      <div
+      {/* <div
         className="absolute left-0 bottom-14 w-[35%] h-16 bg-no-repeat bg-contain md:block hidden"
         style={{
           backgroundImage: `url('/images/Mountains.png')`,
         }}
-      />
+      /> */}
 
-      <div
+      {/* <div
         className="absolute right-0 bottom-14 w-8 h-20 bg-contain bg-no-repeat md:block hidden"
         style={{
           backgroundImage: `url('/images/Leaf2.png')`,
@@ -106,7 +108,7 @@ const Experience = ({
         style={{
           backgroundImage: `url('/images/Flame.png')`,
         }}
-      />
+      /> */}
     </Section>
   );
 };
