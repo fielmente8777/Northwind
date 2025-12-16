@@ -167,6 +167,7 @@ export const pageData = {
       },
       {
         src: "/baijnath-temple.png",
+        
         title: "Baijnath Temple",
       },
       {
