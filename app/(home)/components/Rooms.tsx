@@ -79,7 +79,7 @@ const Rooms = ({ title, subTitle, items }: RoomsProps) => {
                 {item.subTitle}
               </h3>
               <p className="text-white barlow">{item.description}</p>
-              <p className="text-white md:text-xl barlow">{item.price}</p>
+              {/* <p className="text-white md:text-xl barlow">{item.price}</p> */}
               <div>
                 <LinkButton
                   href={item.link.href}

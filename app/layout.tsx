@@ -5,6 +5,9 @@ import "./style.scss";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Script from "next/script";
+import Whatsapp from "@/components/ContactButton/WhatsApp";
+import { contact } from "@/utils/constent";
+import Call from "@/components/ContactButton/Call";
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -72,6 +75,8 @@ export default function RootLayout({
         {/* <Navbar /> */}
         {children}
         <Footer />
+        <Whatsapp whatsAppNumber={contact.phone[0]} />
+        <Call callNumber={contact.phone[0]} />
       </body>
     </html>
   );
