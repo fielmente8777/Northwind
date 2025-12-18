@@ -25,10 +25,26 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Northwind Hotel - Experience Luxury and Comfort in the Heart of Nature",
+  title: "Northwind57 Bir Billing | Luxury Glamping Stay in Himachal Pradesh",
   description:
-    "Northwind Hotel - Experience Luxury and Comfort in the Heart of Nature",
+    "Experience luxury glamping in Bir, Himachal Pradesh at Northwind57. Premium dome stays with mountain views, paragliding, trekking, bonfire nights & exclusive offers.",
+  alternates: {
+    canonical: "https://www.northwind57bir.com/",
+  },
+  keywords: [
+    "Northwind57 Bir",
+    "luxury glamping in Bir",
+    "Bir Billing glamping",
+    "glamping in Himachal Pradesh",
+    "luxury camps in Bir",
+    "paragliding stay Bir Billing",
+  ],
+  openGraph: {
+    title: "Luxury Glamping in Bir Billing | Northwind57",
+    description:
+      "Premium dome glamping stays in Bir with mountain views, adventure activities & luxury comfort.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

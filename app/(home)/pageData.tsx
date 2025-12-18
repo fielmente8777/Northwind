@@ -172,7 +172,7 @@ export const pageData = {
         title: "Chokling Monastery",
       },
       {
-        src: "/baijnath-temple.png",
+        src: "/temple.png",
         
         title: "Baijnath Temple",
       },
