@@ -58,8 +58,11 @@ export const pageData = {
           href: `tel:${contact.phone[0]}`,
         },
         images: [
-          "/images/rooms/Premium-room1.jpg",
-          "/images/rooms/Premium-room1.jpg",
+          "/premium/p1.webp",
+          "/premium/p2.webp",
+          "/premium/p3.webp",
+          "/premium/p4.webp",
+          "/premium/p5.webp",
         ],
       },
 
@@ -75,8 +78,11 @@ export const pageData = {
           href: `tel:${contact.phone[0]}`,
         },
         images: [
-          "/images/rooms/Superior-room1.png",
-          "/images/rooms/Superior-room1.png",
+          "/superior/s1.webp",
+          "/superior/s2.webp",
+          "/superior/s3.webp",
+          "/superior/s4.webp",
+          "/superior/s5.webp",
         ],
       },
     ],
