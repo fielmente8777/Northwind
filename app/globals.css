@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+ :root {
+  --font-montserrat: "Montserrat", sans-serif;
+  /* --font-lora: "Aboreto", cursive; */
+  --primary: #D4B01C;
+  --secondary: #1B1B1B;
+  --dark: #262626;
+  --light: #343E3D;
+  --extra-light: #9C9C9C;
+  --border-clr: #C8C8C8;
+  --bg-clr: #FFFBED;
+}
+@theme inline {
+  --color-primary: #D4B01C;
+  --color-secondary: #1B1B1B;
+  --color-dark: #262626;
+  --color-light: #343E3D;
+  --color-extra-light: #9C9C9C;
+  --color-border-clr: #C8C8C8;
+  --color-bg1: #FFFBED;
+  --color-ternary:#06584E
+}
+body {
+ 
+  font-family: var(--font-barlow), sans-serif;
+  
+}
+.barlow{
+ font-family: var(--font-barlow), sans-serif;
+} 
+
+.gilda{
+ font-family: var(--font-gilda), sans-serif;
+}
+
+
+.marquee { 
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll-left 12s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} 
+
+.font-mont {
+  font-family: var(--font-montserrat), sans-serif;
+}
