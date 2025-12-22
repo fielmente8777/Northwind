@@ -57,13 +57,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* <!-- Google Tag Manager --> */}
+        <Script
+          strategy="afterInteractive"
+          id="gtm-script"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TLQD7HNC');`,
+          }}
+        />
+
+        {/* <!-- End Google Tag Manager --> */}
+      </head>
       <Script id="chatbot-config" strategy="afterInteractive">
         {`
-    window.eazbotConfig = {
-       ndid: "ae33a698-1945-4713-bf00-df0c9640ac0f",
-       hid: "17917506",
-    };
-  `}
+        window.eazbotConfig = {
+          ndid: "ae33a698-1945-4713-bf00-df0c9640ac0f",
+          hid: "17917506",
+        };
+      `}
       </Script>
       <Script
         src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
@@ -72,6 +88,16 @@ export default function RootLayout({
       <body
         className={`${barlow.variable} ${gildaDisplay.variable} ${montserrat.variable} antialiased`}
       >
+        {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TLQD7HNC"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <Navbar /> */}
         {children}
         <Footer />
