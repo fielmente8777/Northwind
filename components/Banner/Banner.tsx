@@ -10,13 +10,17 @@ import LinkButton from "../buttons/LinkButton";
 import { navUpper } from "../navbar/navData";
 
 interface BannerProps {
+  title: string;
+  subTitle: string;
+  description: string;
   src: string;
+  link: {
+    label: string;
+    href: string;
+  };
   videoSrc?: string;
-  title?: string;
-  subTitle?: string;
-  description?: string;
 }
-const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
+const Banner: React.FC<BannerProps> = ({ src, link, title, subTitle, description, videoSrc }) => {
   return (
     <Section defaultPadding={false} className="p-3">
       <div className="relative w-full md:aspect-16/9 aspect-[4/5.5] ">
@@ -77,8 +81,8 @@ const Banner: React.FC<BannerProps> = ({ src, videoSrc, title, subTitle }) => {
         </div>
         <div className="absolute z-50 bottom-8 left-1/2 transform -translate-x-1/2 w-fit">
           <LinkButton
-            href="/contact"
-            label="Book Now"
+            href={link.href}
+            label={link.label}
             className="md:text-xl text-nowrap bg-white/10 backdrop-blur-sm text-white border-white border rounded-none mx-auto mt-4"
           />
         </div>

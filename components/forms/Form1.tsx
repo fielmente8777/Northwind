@@ -192,7 +192,7 @@ const Form1: React.FC<formProps> = ({
         if (setOpen) {
           setOpen(false);
         }
-        window.open("/thank-you", "_blank");
+        window.open("/thank-you/", "_blank");
       } else {
         alert(data.message || "Something went wrong!");
       }
