@@ -127,8 +127,15 @@ const Footer = () => {
             <span className="md:block hidden">|</span>
             <p className="">
               Powered by{" "}
-              <Link href={"https://www.eazotel.com"} target="_blank">
+              {/* <Link href={"https://www.eazotel.com"} target="_blank">
                 Eazotel
+              </Link> */}
+               <Link
+                href="https://www.fielmente.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fielmente
               </Link>
             </p>
           </div>
